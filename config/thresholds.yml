@@ -1,0 +1,65 @@
+# ForgeGuard Detection Thresholds
+# Adjust weights to tune for your candidate pool.
+# Run /forge-guard calibrate with known samples to optimize.
+
+# Score ranges
+score_ranges:
+  pass: 70          # 70+ = proceed to interview
+  review: 40        # 40-69 = needs human investigation
+  flag: 0           # 0-39 = likely AI-generated
+
+# Signal weights (default calibration: mid-to-senior tech roles, English)
+signals:
+  # Lexical (max -25)
+  L1: { weight: -5, enabled: true, name: "AI hallmark vocabulary" }
+  L2: { weight: -3, enabled: true, name: "Passionate about pattern" }
+  L3: { weight: -2, enabled: true, name: "Hedging language" }
+  L4: { weight: -4, enabled: true, name: "Uniform sentence openers" }
+  L5: { weight: -3, enabled: true, name: "Filler phrase density" }
+  L6: { weight: -3, enabled: true, name: "Superlative clustering" }
+  L7: { weight: -5, enabled: true, name: "Corporate buzzword ratio" }
+
+  # Structural (max -20)
+  S1: { weight: -5, enabled: true, name: "Bullet length uniformity" }
+  S2: { weight: -3, enabled: true, name: "Section symmetry" }
+  S3: { weight: -2, enabled: true, name: "Perfect formatting" }
+  S4: { weight: -3, enabled: true, name: "Identical structure across roles" }
+  S5: { weight: -2, enabled: true, name: "Summary length vs body ratio" }
+  S6: { weight: -3, enabled: true, name: "Skills section inflation" }
+  S7: { weight: -2, enabled: true, name: "Cover letter mirrors resume" }
+
+  # Temporal (max -15)
+  T1: { weight: -3, enabled: true, name: "Career gap inconsistency" }
+  T2: { weight: -2, enabled: true, name: "Tenure rounding" }
+  T3: { weight: -2, enabled: true, name: "Date format inconsistency" }
+  T4: { weight: -3, enabled: true, name: "Impossible overlap" }
+  T5: { weight: -2, enabled: true, name: "Recency bias" }
+  T6: { weight: -2, enabled: true, name: "Graduation vs experience mismatch" }
+  T7: { weight: -1, enabled: true, name: "Suspiciously current" }
+
+  # Metric (max -15)
+  M1: { weight: -3, enabled: true, name: "Vague metrics" }
+  M2: { weight: -2, enabled: true, name: "Round number bias" }
+  M3: { weight: -2, enabled: true, name: "Metric inflation" }
+  M4: { weight: -2, enabled: true, name: "Metric without ownership" }
+  M5: { weight: -2, enabled: true, name: "Copy-paste metrics" }
+  M6: { weight: -2, enabled: true, name: "Missing metrics entirely" }
+  M7: { weight: -2, enabled: true, name: "Metric mismatch across sources" }
+
+  # Voice (max -10)
+  V1: { weight: -2, enabled: true, name: "Perspective shifts" }
+  V2: { weight: -1, enabled: true, name: "Tense inconsistency" }
+  V3: { weight: -2, enabled: true, name: "Passive voice overuse" }
+  V4: { weight: -2, enabled: true, name: "Uniform tone" }
+  V5: { weight: -1, enabled: true, name: "Overly polished" }
+  V6: { weight: -1, enabled: true, name: "Generic enthusiasm" }
+  V7: { weight: -1, enabled: true, name: "Mismatched register" }
+
+  # Cross-source (max -15)
+  X1: { weight: -3, enabled: true, name: "LinkedIn title mismatch" }
+  X2: { weight: -3, enabled: true, name: "Tenure discrepancy" }
+  X3: { weight: -2, enabled: true, name: "GitHub activity gap" }
+  X4: { weight: -2, enabled: true, name: "Publication not found" }
+  X5: { weight: -2, enabled: true, name: "Patent not found" }
+  X6: { weight: -2, enabled: true, name: "Education mismatch" }
+  X7: { weight: -1, enabled: true, name: "Company doesn't exist" }

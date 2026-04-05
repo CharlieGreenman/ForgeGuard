@@ -1,0 +1,12 @@
+{
+  "name": "forge-guard",
+  "version": "1.0.0",
+  "description": "AI application screening tool built on Claude Code",
+  "keywords": ["ai", "hiring", "screening", "claude-code", "resume", "detection"],
+  "author": "Charlie Greenman",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CharlieGreenman/ForgeGuard"
+  },
+  "license": "MIT"
+}
