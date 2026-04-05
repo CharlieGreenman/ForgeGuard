@@ -93,9 +93,11 @@ Resume / Application drops in
          |
     +----+----+
     v    v    v
-  Pass  Review  Reject
+  Pass  Review  Flag
   70+   40-69   <40
 ```
+
+Recommendations follow the report template (PASS / REVIEW / FLAG). Low scores mean prioritize human review; do not auto-reject from a score alone.
 
 ## Detection Signal Categories
 
