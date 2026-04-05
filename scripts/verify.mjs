@@ -26,8 +26,18 @@ must(yml.includes("signals:"), "config/thresholds.yml missing signals:");
 const modesDir = join(root, "modes");
 must(existsSync(modesDir), "missing modes/");
 const modes = readdirSync(modesDir).filter((f) => f.endsWith(".md"));
-must(modes.length >= 8, `expected at least 8 modes/*.md, found ${modes.length}`);
-for (const name of ["_signals.md", "scan.md", "verify.md", "report.md"]) {
+const requiredModes = [
+  "_signals.md",
+  "scan.md",
+  "batch.md",
+  "verify.md",
+  "compare.md",
+  "interview.md",
+  "report.md",
+  "calibrate.md",
+  "dashboard.md",
+];
+for (const name of requiredModes) {
   must(modes.includes(name), `missing modes/${name}`);
 }
 
