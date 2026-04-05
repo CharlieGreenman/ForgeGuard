@@ -7,6 +7,12 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Made in USA](https://img.shields.io/badge/Made_in-USA_%F0%9F%87%BA%F0%9F%87%B8-red?style=flat)
 
+<p align="center">
+  <img src="demo/demo.gif" alt="ForgeGuard Demo" width="800">
+</p>
+
+<p align="center"><em>42-signal detection. Claim verification. Interview questions generated. In seconds.</em></p>
+
 ---
 
 ## The Problem
