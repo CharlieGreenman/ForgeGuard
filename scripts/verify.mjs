@@ -71,6 +71,27 @@ for (const p of prefixes) {
   }
 }
 
+function normalizeSignalLabel(s) {
+  return s.toLowerCase().replace(/[^a-z0-9]/g, "");
+}
+
+for (const line of sigBlock.split("\n")) {
+  const m = line.match(
+    /^\s*(L[1-7]|S[1-7]|T[1-7]|M[1-7]|V[1-7]|X[1-7]):\s*\{[^}]*\bname:\s*"([^"]+)"\s*\}\s*$/
+  );
+  if (!m) continue;
+  const id = m[1];
+  const yamlName = m[2];
+  const rowM = signalsMdContent.match(new RegExp(`\\| ${id} \\|[^\\n]*`));
+  must(rowM, `modes/_signals.md missing table row for signal ${id} (expected | ${id} | ...)`);
+  const normYaml = normalizeSignalLabel(yamlName);
+  const normRow = normalizeSignalLabel(rowM[0]);
+  must(
+    normRow.includes(normYaml),
+    `modes/_signals.md row for ${id} must include the same label as config/thresholds.yml name: "${yamlName}"`
+  );
+}
+
 const modesDir = join(root, "modes");
 must(existsSync(modesDir), "missing modes/");
 const modes = readdirSync(modesDir).filter((f) => f.endsWith(".md"));

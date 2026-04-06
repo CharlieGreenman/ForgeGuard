@@ -193,6 +193,10 @@ ForgeGuard/
         └── SKILL.md             # Claude Code skill router
 ```
 
+## Development
+
+From the repo root, run `npm run verify` before opening a pull request or committing upstream changes. The script checks that `config/thresholds.yml`, `modes/_signals.md`, mode files, the report template, examples, and docs stay aligned (no extra npm dependencies).
+
 ## Ethical Use
 
 **ForgeGuard is a screening aid, not a judge.** It flags signals for human reviewers to investigate.

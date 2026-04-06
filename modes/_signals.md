@@ -47,7 +47,7 @@ Parse the document structure. Measure bullet lengths, count bullets per section,
 | T3 | Date format inconsistency | -2 | Mixed date formats within the same document (Jan 2024 vs 2024-01) |
 | T4 | Impossible overlap | -3 | Two full-time roles overlapping in time |
 | T5 | Recency bias | -2 | Recent role has 3x more detail than older roles of similar tenure |
-| T6 | Graduation date vs experience mismatch | -2 | Timeline doesn't add up (graduated 2020, claims 8 years experience) |
+| T6 | Graduation vs experience mismatch | -2 | Timeline doesn't add up (graduated 2020, claims 8 years experience) |
 | T7 | Suspiciously current | -1 | End date is "Present" but LinkedIn shows they left months ago |
 
 ### How to check
