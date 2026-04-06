@@ -10,14 +10,16 @@ Parse `data/screenings.md` for all screening results.
 
 ### Step 2 -- Display Dashboard
 
+Read `score_ranges` from `config/thresholds.yml` (`pass`, `review`). Count PASS / REVIEW / FLAG the same way as `modes/scan.md` Step 4 and `modes/batch.md` Step 3 (defaults when using shipped YAML: pass ≥ 70, review band 40–69, flag < 40).
+
 ```
 ## ForgeGuard Dashboard -- {date}
 
 ### Overview
 - Total screened: {N}
-- Passed (70+): {N} ({%})
-- Review (40-69): {N} ({%})
-- Flagged (<40): {N} ({%})
+- Passed: {N} ({%}) — score ≥ `pass`
+- Review: {N} ({%}) — `review` ≤ score < `pass`
+- Flagged: {N} ({%}) — score < `review`
 - Average score: {X}/100
 
 ### Score Distribution
