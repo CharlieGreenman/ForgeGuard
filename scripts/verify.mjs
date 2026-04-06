@@ -371,6 +371,10 @@ must(
   skillMd.includes("`scripts/cursor-agent-loop.sh`"),
   ".claude/skills/forge-guard/SKILL.md must reference `scripts/cursor-agent-loop.sh` so maintainers find the optional iteration driver (see CLAUDE.md and README.md Development)"
 );
+must(
+  skillMd.includes("`scripts/cursor-agent-stream-format.py`"),
+  ".claude/skills/forge-guard/SKILL.md must reference `scripts/cursor-agent-stream-format.py` alongside the loop script (see CLAUDE.md Main Files)"
+);
 
 for (const name of ["authentic-resume.md", "ai-generated-resume.md"]) {
   const p = join(root, "examples", name);

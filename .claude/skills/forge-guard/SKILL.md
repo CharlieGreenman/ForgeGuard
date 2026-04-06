@@ -84,4 +84,4 @@ Execute the instructions from the loaded mode file.
 
 From the repo root, run **`npm run verify`** before committing upstream changes to modes, `config/thresholds.yml`, templates, examples, or this skill. The script checks that signals, thresholds, docs, and templates stay aligned.
 
-For optional non-interactive passes that run verify and commit in a loop, use **`scripts/cursor-agent-loop.sh`** (see the script header and `README.md` Development).
+For optional non-interactive passes that run verify and commit in a loop, use **`scripts/cursor-agent-loop.sh`** (see the script header and `README.md` Development). For verbose JSON stream output from that driver, use **`scripts/cursor-agent-stream-format.py`** (Python 3; see its header).
