@@ -2,6 +2,8 @@
 
 Use this as a calibration sample for `/forge-guard calibrate`. This resume demonstrates common AI writing patterns.
 
+**Maintainer note:** From the repo root, run **`npm run verify`** after editing this file or other calibration samples so examples stay aligned with `modes/_signals.md` and `config/thresholds.yml` (see `scripts/verify.mjs`).
+
 ---
 
 ## John Smith

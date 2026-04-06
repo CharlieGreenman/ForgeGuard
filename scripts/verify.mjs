@@ -213,6 +213,11 @@ must(
 for (const name of ["authentic-resume.md", "ai-generated-resume.md"]) {
   const p = join(root, "examples", name);
   must(existsSync(p), `missing ${p}`);
+  const exampleMd = readFileSync(p, "utf8");
+  must(
+    exampleMd.includes("`npm run verify`"),
+    `examples/${name} must cite \`npm run verify\` after edits so maintainers run the quality gate`
+  );
 }
 
 const pkgPath = join(root, "package.json");
