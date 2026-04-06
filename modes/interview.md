@@ -80,7 +80,7 @@ Based on screening score: {X}/100
 
 ### Screening tier context
 
-When you build on a prior `scan` report, its **Recommendation** (PASS / REVIEW / FLAG) was derived from `score_ranges` in `config/thresholds.yml`, same rules as `modes/scan.md` Step 4. Use those cutoffs if you restate the tier; qualitative authenticity bands in `CLAUDE.md` are narrative context only. After calibration, describe bands using the current YAML values, not assumed defaults.
+When you build on a prior `scan` report, its **Recommendation** (PASS / REVIEW / FLAG) was derived from `score_ranges` in `config/thresholds.yml`, same rules as `modes/scan.md` Step 4. Shipped integer-score defaults match that step: **PASS** if `score >= pass` (default: 70+), **REVIEW** if `review <= score < pass` (default: 40–69), **FLAG** if `score < review` (default: 0–39). Use those cutoffs if you restate the tier; qualitative authenticity bands in `CLAUDE.md` are narrative context only. After calibration, describe bands using the current YAML values, not assumed defaults.
 
 ### Interviewer Notes
 

@@ -212,6 +212,18 @@ must(
   interviewMode.includes("`npm run verify`"),
   "modes/interview.md must cite `npm run verify` after threshold or taxonomy edits so maintainers run the quality gate"
 );
+must(
+  interviewMode.includes(`(default: ${passN}+)`),
+  `modes/interview.md Screening tier context must document PASS default matching config/thresholds.yml (pass=${passN})`
+);
+must(
+  interviewMode.includes(`(default: ${reviewN}–${scanReviewUpper})`),
+  `modes/interview.md Screening tier context must document REVIEW default band matching config (review=${reviewN}, pass=${passN} → ${reviewN}–${scanReviewUpper})`
+);
+must(
+  interviewMode.includes(`(default: 0–${scanFlagUpper})`),
+  `modes/interview.md Screening tier context must document FLAG default integer band matching config (review=${reviewN} → 0–${scanFlagUpper})`
+);
 
 const verifyModePath = join(root, "modes", "verify.md");
 must(existsSync(verifyModePath), `missing ${verifyModePath}`);
@@ -223,6 +235,18 @@ must(
 must(
   verifyMode.includes("`npm run verify`"),
   "modes/verify.md must cite `npm run verify` after threshold or taxonomy edits so maintainers run the quality gate"
+);
+must(
+  verifyMode.includes(`(default: ${passN}+)`),
+  `modes/verify.md Step 4 must document PASS default matching config/thresholds.yml (pass=${passN})`
+);
+must(
+  verifyMode.includes(`(default: ${reviewN}–${scanReviewUpper})`),
+  `modes/verify.md Step 4 must document REVIEW default band matching config (review=${reviewN}, pass=${passN} → ${reviewN}–${scanReviewUpper})`
+);
+must(
+  verifyMode.includes(`(default: 0–${scanFlagUpper})`),
+  `modes/verify.md Step 4 must document FLAG default integer band matching config (review=${reviewN} → 0–${scanFlagUpper})`
 );
 
 const dashboardModePath = join(root, "modes", "dashboard.md");
@@ -291,6 +315,18 @@ must(
 must(
   compareMode.includes("modes/scan.md") && compareMode.includes("Step 4"),
   "modes/compare.md must reference modes/scan.md Step 4 so compare output stays aligned with PASS/REVIEW/FLAG tier semantics when combined with scan"
+);
+must(
+  compareMode.includes(`(default: ${passN}+)`),
+  `modes/compare.md Notes must document PASS default matching config/thresholds.yml (pass=${passN})`
+);
+must(
+  compareMode.includes(`(default: ${reviewN}–${scanReviewUpper})`),
+  `modes/compare.md Notes must document REVIEW default band matching config (review=${reviewN}, pass=${passN} → ${reviewN}–${scanReviewUpper})`
+);
+must(
+  compareMode.includes(`(default: 0–${scanFlagUpper})`),
+  `modes/compare.md Notes must document FLAG default integer band matching config (review=${reviewN} → 0–${scanFlagUpper})`
 );
 
 const skill = join(root, ".claude", "skills", "forge-guard", "SKILL.md");
