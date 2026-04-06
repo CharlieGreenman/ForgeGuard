@@ -68,3 +68,7 @@ Not found: {N}
 When you combine this pass with a `scan` authenticity score or a committee `report`, use `score_ranges` from `config/thresholds.yml` for PASS / REVIEW / FLAG so recommendation tiers match calibrated cutoffs (see `modes/scan.md` Step 4).
 
 **Important:** "Not Found" does not mean "fabricated." Many legitimate claims aren't indexed publicly. Flag it, but don't accuse.
+
+## Maintainer note
+
+From the repo root, run **`npm run verify`** after editing `config/thresholds.yml`, `modes/_signals.md`, or this mode file so claim-verification guidance stays aligned with scan/report tier semantics, signal taxonomy, and docs (see `scripts/verify.mjs`). Same pattern as `modes/scan.md`, `modes/batch.md`, and `modes/compare.md`.

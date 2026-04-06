@@ -88,3 +88,7 @@ When you build on a prior `scan` report, its **Recommendation** (PASS / REVIEW /
 - The goal is to let authentic candidates shine, not to trap anyone
 - If a candidate gives a strong, specific answer to a flagged area, that's a positive signal -- update your assessment
 - Combine interview behavior with document signals and verified claims; no single answer or "tell" is dispositive
+
+## Maintainer note
+
+From the repo root, run **`npm run verify`** after editing `config/thresholds.yml`, `modes/_signals.md`, or this mode file so question-generation prompts stay aligned with signal IDs, PASS/REVIEW/FLAG cutoffs, and docs (see `scripts/verify.mjs`). Same pattern as `modes/scan.md`, `modes/batch.md`, and `modes/compare.md`.

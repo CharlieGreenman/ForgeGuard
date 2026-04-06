@@ -148,6 +148,10 @@ must(
   interviewMode.includes("config/thresholds.yml"),
   "modes/interview.md must reference config/thresholds.yml so PASS/REVIEW/FLAG context matches scan and calibrated score_ranges"
 );
+must(
+  interviewMode.includes("`npm run verify`"),
+  "modes/interview.md must cite `npm run verify` after threshold or taxonomy edits so maintainers run the quality gate"
+);
 
 const verifyModePath = join(root, "modes", "verify.md");
 must(existsSync(verifyModePath), `missing ${verifyModePath}`);
@@ -155,6 +159,10 @@ const verifyMode = readFileSync(verifyModePath, "utf8");
 must(
   verifyMode.includes("config/thresholds.yml"),
   "modes/verify.md must reference config/thresholds.yml so combined verify + scan/report output uses the same PASS/REVIEW/FLAG cutoffs"
+);
+must(
+  verifyMode.includes("`npm run verify`"),
+  "modes/verify.md must cite `npm run verify` after threshold or taxonomy edits so maintainers run the quality gate"
 );
 
 const dashboardModePath = join(root, "modes", "dashboard.md");
