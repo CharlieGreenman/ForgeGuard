@@ -185,6 +185,10 @@ const compareModePath = join(root, "modes", "compare.md");
 must(existsSync(compareModePath), `missing ${compareModePath}`);
 const compareMode = readFileSync(compareModePath, "utf8");
 must(
+  compareMode.includes("config/thresholds.yml"),
+  "modes/compare.md must reference config/thresholds.yml so cross-source output stays aligned with PASS/REVIEW/FLAG cutoffs and scan calibration"
+);
+must(
   compareMode.includes("`npm run verify`"),
   "modes/compare.md must cite `npm run verify` after threshold or mode edits so maintainers run the quality gate"
 );

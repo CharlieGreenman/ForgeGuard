@@ -56,7 +56,7 @@ After determining the mode, load:
 
 ### All modes load:
 - `modes/_signals.md` (signal taxonomy)
-- `config/thresholds.yml` (if exists, for custom thresholds)
+- `config/thresholds.yml` (`score_ranges` for PASS/REVIEW/FLAG and per-signal weights; shipped in-repo — customize via `calibrate`, then run `npm run verify`)
 
 ### Then load the mode file:
 - `modes/{mode}.md`
