@@ -13,7 +13,7 @@ Parse `data/screenings.md` for all screening results.
 
 ### Step 2 -- Display Dashboard
 
-Read `score_ranges` from `config/thresholds.yml` (`pass`, `review`). Count PASS / REVIEW / FLAG the same way as `modes/scan.md` Step 4 and `modes/batch.md` Step 3 (defaults when using shipped YAML: pass ≥ 70, review band 40–69, flag < 40). The “Score Distribution” histogram uses fixed buckets aligned with `CLAUDE.md` authenticity bands; it describes pool shape only and does not change when you recalibrate `score_ranges`.
+Read `score_ranges` from `config/thresholds.yml` (`pass`, `review`). Count PASS / REVIEW / FLAG the same way as `modes/scan.md` Step 4 and `modes/batch.md` Step 3. Shipped integer-score defaults match that step: **PASS** if `score >= pass` (default: 70+), **REVIEW** if `review <= score < pass` (default: 40–69), **FLAG** if `score < review` (default: 0–39). After calibration, describe bands using the YAML values in the Overview or Notes instead of these defaults. The “Score Distribution” histogram uses fixed buckets aligned with `CLAUDE.md` authenticity bands; it describes pool shape only and does not change when you recalibrate `score_ranges`.
 
 ```
 ## ForgeGuard Dashboard -- {date}

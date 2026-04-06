@@ -240,6 +240,18 @@ must(
   dashboardMode.includes("`npm run verify`"),
   "modes/dashboard.md must cite `npm run verify` after threshold edits so maintainers run the quality gate"
 );
+must(
+  dashboardMode.includes(`(default: ${passN}+)`),
+  `modes/dashboard.md Step 2 must document PASS default matching config/thresholds.yml (pass=${passN})`
+);
+must(
+  dashboardMode.includes(`(default: ${reviewN}–${scanReviewUpper})`),
+  `modes/dashboard.md Step 2 must document REVIEW default band matching config (review=${reviewN}, pass=${passN} → ${reviewN}–${scanReviewUpper})`
+);
+must(
+  dashboardMode.includes(`(default: 0–${scanFlagUpper})`),
+  `modes/dashboard.md Step 2 must document FLAG default integer band matching config (review=${reviewN} → 0–${scanFlagUpper})`
+);
 
 const batchModePath = join(root, "modes", "batch.md");
 must(existsSync(batchModePath), `missing ${batchModePath}`);
