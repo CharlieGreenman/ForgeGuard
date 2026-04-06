@@ -64,6 +64,9 @@ After determining the mode, load:
 ### `report` mode
 Also load `templates/report-template.md` so committee output stays aligned with per-candidate report shape, headings, and PASS / REVIEW / FLAG semantics (see `modes/report.md` Step 1).
 
+### `calibrate` mode
+Also load `examples/authentic-resume.md` and `examples/ai-generated-resume.md` when the user needs checked-in practice samples (synthetic personas, not real candidates; see `modes/calibrate.md` Input).
+
 Execute the instructions from the loaded mode file.
 
 ---

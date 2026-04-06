@@ -346,6 +346,11 @@ must(
   skillMd.includes("data/screenings.md") && skillMd.includes("reports/"),
   ".claude/skills/forge-guard/SKILL.md must name data/screenings.md and reports/ so gitignored hiring data stays out of upstream commits"
 );
+must(
+  skillMd.includes("examples/authentic-resume.md") &&
+    skillMd.includes("examples/ai-generated-resume.md"),
+  ".claude/skills/forge-guard/SKILL.md must name examples/authentic-resume.md and examples/ai-generated-resume.md so calibrate routing matches modes/calibrate.md"
+);
 
 for (const name of ["authentic-resume.md", "ai-generated-resume.md"]) {
   const p = join(root, "examples", name);
