@@ -99,6 +99,8 @@ Resume / Application drops in
 
 PASS / REVIEW / FLAG use the `pass` and `review` values under `score_ranges` in `config/thresholds.yml` (see `modes/scan.md` Step 4). The diagram above shows the shipped defaults on the 0–100 authenticity scale.
 
+The same YAML block includes a `flag` value (usually `0`) so tooling can assert `pass > review > flag`. That field is **not** the upper bound of the FLAG tier: FLAG means **score strictly below `review`**, as described in the header comments of `config/thresholds.yml`.
+
 Recommendations follow the report template (PASS / REVIEW / FLAG). Low scores mean prioritize human review; do not auto-reject from a score alone.
 
 ## Detection Signal Categories
