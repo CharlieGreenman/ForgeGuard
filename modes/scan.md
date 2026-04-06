@@ -67,7 +67,7 @@ Generate 3-5 questions, ordered by flag severity.
 
 ### Step 6 -- Output Report
 
-Display a concise summary inline for the user. **Always save** a full report to `reports/{###}-{candidate-slug}-{YYYY-MM-DD}.md` using `templates/report-template.md` (same heading levels, section order, and placeholders: `{CANDIDATE}`, `{ROLE}`, `{DATE}`, `{SCORE}`, `{RECOMMENDATION}`, `{TRIGGERED}`, `{TOTAL}`, per-category counts and deductions, `{FLAGS}`, `{CLEAN_SIGNALS}`, `{CLAIMS}`, `{QUESTIONS}`, `{NOTES}`). Strip the HTML comment from the template when writing the file.
+Display a concise summary inline for the user. **Always save** a full report to `reports/{###}-{candidate-slug}-{YYYY-MM-DD}.md` using `templates/report-template.md` (same heading levels, section order, and placeholders: `{CANDIDATE}`, `{ROLE}`, `{DATE}`, `{SCORE}`, `{RECOMMENDATION}`, `{TRIGGERED}`, `{TOTAL}`, per-category counts and deductions, `{FLAGS}`, `{CLEAN_SIGNALS}`, `{CLAIMS}`, `{QUESTIONS}`, `{NOTES}`). Strip HTML comments from the template when writing the file.
 
 For inline display only, a shorter block is fine:
 
