@@ -172,6 +172,10 @@ must(
   calibrateMode.includes("`npm run verify`"),
   "modes/calibrate.md must cite `npm run verify` after threshold edits so maintainers run the quality gate"
 );
+must(
+  calibrateMode.includes("`modes/scan.md` Step 4"),
+  "modes/calibrate.md must reference `modes/scan.md` Step 4 so calibrated score_ranges stay aligned with scan tier semantics"
+);
 
 const interviewModePath = join(root, "modes", "interview.md");
 must(existsSync(interviewModePath), `missing ${interviewModePath}`);
