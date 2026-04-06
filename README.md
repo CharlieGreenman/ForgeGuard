@@ -97,6 +97,8 @@ Resume / Application drops in
   70+   40-69   <40
 ```
 
+PASS / REVIEW / FLAG use the `pass` and `review` values under `score_ranges` in `config/thresholds.yml` (see `modes/scan.md` Step 4). The diagram above shows the shipped defaults on the 0–100 authenticity scale.
+
 Recommendations follow the report template (PASS / REVIEW / FLAG). Low scores mean prioritize human review; do not auto-reject from a score alone.
 
 ## Detection Signal Categories

@@ -111,4 +111,24 @@ must(
 const claude = join(root, "CLAUDE.md");
 must(existsSync(claude), "missing CLAUDE.md");
 
+const readmePath = join(root, "README.md");
+must(existsSync(readmePath), "missing README.md");
+const readme = readFileSync(readmePath, "utf8");
+const howStart = readme.indexOf("## How It Works");
+must(howStart !== -1, "README.md missing ## How It Works section");
+const detectStart = readme.indexOf("\n## Detection Signal Categories");
+must(detectStart !== -1, "README.md missing ## Detection Signal Categories section");
+const howSection = readme.slice(howStart, detectStart);
+must(
+  howSection.includes("`config/thresholds.yml`"),
+  "README.md How It Works must cite `config/thresholds.yml` for PASS/REVIEW/FLAG cutoffs"
+);
+const reviewUpper = passN - 1;
+must(
+  howSection.includes(`${passN}+`) &&
+    howSection.includes(`${reviewN}-${reviewUpper}`) &&
+    howSection.includes(`<${reviewN}`),
+  `README.md How It Works diagram must match config/thresholds.yml score_ranges (pass=${passN}, review=${reviewN}; REVIEW band ${reviewN}-${reviewUpper}, FLAG <${reviewN})`
+);
+
 console.log("verify: ok");
