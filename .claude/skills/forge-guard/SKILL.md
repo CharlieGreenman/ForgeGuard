@@ -73,6 +73,9 @@ Also load `templates/report-template.md` so committee output stays aligned with 
 ### `calibrate` mode
 Also load `examples/authentic-resume.md` and `examples/ai-generated-resume.md` when the user needs checked-in practice samples (synthetic personas, not real candidates; see `modes/calibrate.md` Input).
 
+### `dashboard` mode
+Follow `modes/dashboard.md` Step 1: read completed rows from `data/screenings.md` when building aggregates. That tracker is gitignored hiring data (see Guardrails); if the file is missing or empty, use the short notice path in the mode file instead of inventing stats.
+
 Execute the instructions from the loaded mode file.
 
 ---

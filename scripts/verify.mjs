@@ -387,6 +387,14 @@ must(
   skillMd.includes("`scripts/cursor-agent-stream-format.py`"),
   ".claude/skills/forge-guard/SKILL.md must reference `scripts/cursor-agent-stream-format.py` alongside the loop script (see CLAUDE.md Main Files)"
 );
+must(
+  /### `dashboard` mode[\s\S]{0,800}`data\/screenings\.md`/.test(skillMd),
+  ".claude/skills/forge-guard/SKILL.md must include a `dashboard` context block that ties `modes/dashboard.md` Step 1 to `data/screenings.md` (see modes/dashboard.md)"
+);
+must(
+  skillMd.includes("`modes/dashboard.md`"),
+  ".claude/skills/forge-guard/SKILL.md must reference `modes/dashboard.md` in dashboard context loading"
+);
 
 for (const name of ["authentic-resume.md", "ai-generated-resume.md"]) {
   const p = join(root, "examples", name);
