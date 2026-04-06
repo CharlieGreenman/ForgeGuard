@@ -38,21 +38,25 @@ Type@0ms ""
 Enter
 Type@0ms "Available commands:"
 Enter
-Type@0ms "  /forge-guard {resume}     -> SCAN: full AI detection"
+Type@0ms "  /forge-guard {resume}     --> SCAN: full AI detection on a single application"
 Enter
-Type@0ms "  /forge-guard batch {dir}  -> Batch screen applications"
+Type@0ms "  /forge-guard batch {dir}  --> Batch screen a folder of applications"
 Enter
-Type@0ms "  /forge-guard verify       -> Cross-reference claims"
+Type@0ms "  /forge-guard verify {resume} --> Cross-reference claims against public sources"
 Enter
-Type@0ms "  /forge-guard compare      -> Resume vs LinkedIn vs cover letter"
+Type@0ms "  /forge-guard compare      --> Compare resume vs LinkedIn vs cover letter"
 Enter
-Type@0ms "  /forge-guard interview    -> Verification questions"
+Type@0ms "  /forge-guard interview {resume} --> Generate verification interview questions"
 Enter
-Type@0ms "  /forge-guard report       -> Screening report for committee"
+Type@0ms "  /forge-guard report       --> Screening report for hiring committee"
 Enter
-Type@0ms "  /forge-guard calibrate    -> Calibrate with known samples"
+Type@0ms "  /forge-guard calibrate    --> Calibrate thresholds with known samples"
 Enter
-Type@0ms "  /forge-guard dashboard    -> Screening stats"
+Type@0ms "  /forge-guard dashboard    --> View screening stats"
+Enter
+Type@0ms ""
+Enter
+Type@0ms "Or paste a resume directly to run a full scan."
 Enter
 Sleep 3s
 
