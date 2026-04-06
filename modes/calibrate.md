@@ -10,6 +10,11 @@ Default thresholds are tuned for mid-to-senior tech roles with English-language 
 - You're seeing too many false positives or false negatives
 - Your role attracts a specific writing style (academic, creative, etc.)
 
+## Guardrails
+
+- Recalibration changes how often signals fire and where scores fall relative to PASS / REVIEW / FLAG; it does **not** make outputs proof of AI use or dishonesty. Treat scores as probabilistic heuristics (see `CLAUDE.md`).
+- **Never** auto-reject from a score alone. Use tiers from `score_ranges` in `config/thresholds.yml` exactly as in `modes/scan.md` Step 4 to decide what needs human follow-up, not a final hire / no-hire outcome.
+
 ## Input
 
 The user provides labeled samples:
