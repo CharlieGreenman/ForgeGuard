@@ -32,6 +32,18 @@ must(/^\s+pass:/m.test(scoreBlock), "config/thresholds.yml score_ranges missing 
 must(/^\s+review:/m.test(scoreBlock), "config/thresholds.yml score_ranges missing review");
 must(/^\s+flag:/m.test(scoreBlock), "config/thresholds.yml score_ranges missing flag");
 
+const passM = scoreBlock.match(/^\s+pass:\s*(\d+)/m);
+const reviewM = scoreBlock.match(/^\s+review:\s*(\d+)/m);
+const flagM = scoreBlock.match(/^\s+flag:\s*(\d+)/m);
+must(passM && reviewM && flagM, "config/thresholds.yml score_ranges pass/review/flag must be integers");
+const passN = Number(passM[1]);
+const reviewN = Number(reviewM[1]);
+const flagN = Number(flagM[1]);
+must(
+  passN > reviewN && reviewN > flagN,
+  `config/thresholds.yml score_ranges must satisfy pass > review > flag (got pass=${passN}, review=${reviewN}, flag=${flagN})`
+);
+
 const sigBlock = yml.slice(signalsStart);
 const sigLines = sigBlock.match(/^\s{2}[LSTMVX][1-7]:/gm);
 must(sigLines && sigLines.length === 42, `expected 42 signal entries in thresholds.yml, found ${sigLines?.length ?? 0}`);
