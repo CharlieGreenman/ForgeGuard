@@ -8,6 +8,12 @@ Cross-references resume claims against public sources.
 - Candidate name (for public record searches)
 - Optional: LinkedIn URL, GitHub URL
 
+## Guardrails
+
+- Public records are **incomplete**. "Not Found" often reflects search limits, paywalled directories, or lagging profiles — not proof a claim is false (see Step 3–4).
+- Report only claims you **actually checked** with a named source (WebSearch, WebFetch, or material the candidate supplied). **Never fabricate** URLs, quotes, or statuses (`CLAUDE.md`).
+- Verification output is **probabilistic**. Do **not** auto-reject from mismatches or missing evidence alone; use results to prioritize human follow-up and interview topics.
+
 ## Workflow
 
 ### Step 1 -- Extract Claims
