@@ -25,6 +25,8 @@ After all scans complete, build a summary table sorted by score (lowest first --
 
 PASS / REVIEW / FLAG counts use the same rules as `modes/scan.md` Step 4: read `pass` and `review` from `score_ranges` in `config/thresholds.yml` (not the qualitative authenticity bands in `CLAUDE.md`). Shipped integer-score defaults match that step: **PASS** if `score >= pass` (default: 70+), **REVIEW** if `review <= score < pass` (default: 40–69), **FLAG** if `score < review` (default: 0–39). After calibration, describe bands using the YAML values in the summary notes instead of these defaults.
 
+The table below is for the batch markdown artifact (`reports/batch-{date}.md` in Step 4). Rows in `data/screenings.md` follow **`modes/scan.md` Step 7** instead: include **Date**, omit **Top Flag**, and match the report path from each scan. Each run in Step 2 should still perform scan Step 7 so the dashboard can read the tracker.
+
 ```
 ## Batch Screening Summary -- {date}
 

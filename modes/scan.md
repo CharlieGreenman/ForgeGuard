@@ -95,11 +95,15 @@ For inline display only, a shorter block is fine:
 
 ### Step 7 -- Log to Tracker
 
-Append to `data/screenings.md`:
+Append one row per screened candidate to `data/screenings.md`. Use this column layout so `modes/dashboard.md` can parse aggregates (`modes/dashboard.md` Step 1):
 
 ```
 | # | Date | Candidate | Role | Score | Recommendation | Report |
+|---|------|-----------|------|-------|----------------|--------|
+| 1 | 2026-04-06 | candidate-slug | Staff Engineer | 72 | PASS | reports/001-candidate-slug-2026-04-06.md |
 ```
+
+Use the next sequence number in `#`, the report filename from Step 6, and PASS / REVIEW / FLAG from Step 4 (driven by `score_ranges` in `config/thresholds.yml`).
 
 ## Maintainer note
 
