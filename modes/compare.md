@@ -45,6 +45,8 @@ Build a comparison matrix:
 
 ### Step 4 -- Output
 
+Include **2–4 short verification prompts** that stress-test **High** and **Medium** severity discrepancies (and duplicated phrases when they look like copy-paste across sources). Keep questions conversational and open-ended so the candidate can explain benign causes (stale LinkedIn, rounding, internal titles). If the hiring team wants a longer, signal-aware list, point them to **`modes/interview.md`** on the same materials.
+
 ```
 ## Consistency Analysis: {Candidate}
 
@@ -60,6 +62,13 @@ Duplicated phrases: {N}
 - "{exact phrase}" appears in resume AND cover letter
 - ...
 
+### Suggested verification prompts
+1. ...
+2. ...
+3. ...
+
+(Fuller behavioral prompts tied to scan signals: run `modes/interview.md` on the resume.)
+
 ### Consistency Score: {X}/100
 ```
 
@@ -69,6 +78,7 @@ Duplicated phrases: {N}
 - The **Consistency Score** above summarizes how well sources agree in this pass. It is not the same field as the ForgeGuard authenticity score from `scan` unless you explicitly map or recompute it using the same signal model and `config/thresholds.yml` cutoffs.
 - When you combine this analysis with a `scan` report or cite PASS / REVIEW / FLAG, read `pass` and `review` from `score_ranges` in `config/thresholds.yml` exactly as in `modes/scan.md` Step 4 — not the qualitative authenticity bands in `CLAUDE.md` alone. Shipped integer-score defaults match that step: **PASS** if `score >= pass` (default: 70+), **REVIEW** if `review <= score < pass` (default: 40–69), **FLAG** if `score < review` (default: 0–39). After calibration, restate tiers using the YAML values, not these defaults.
 - Scores and pattern matches are probabilistic. Use them to decide what to ask in conversation, not to auto-reject (see `CLAUDE.md`).
+- Use **`modes/interview.md`** when you want a dedicated pass that generates more interview questions from the application text and screening context, not only from this cross-source matrix.
 
 ## Maintainer note
 
