@@ -120,6 +120,10 @@ must(
   reportMode.includes("templates/report-template.md"),
   "modes/report.md must reference templates/report-template.md so committee reports align with per-candidate output"
 );
+must(
+  reportMode.includes("`npm run verify`"),
+  "modes/report.md must cite `npm run verify` after template or threshold edits so maintainers run the quality gate"
+);
 
 const scanModePath = join(root, "modes", "scan.md");
 must(existsSync(scanModePath), `missing ${scanModePath}`);

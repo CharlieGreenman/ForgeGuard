@@ -66,3 +66,7 @@ Individual screening reports are available in the `reports/` directory.
 ### Step 3 -- Save
 
 Save to `reports/committee-{role-slug}-{date}.md`.
+
+### Maintainers
+
+After editing this file, `templates/report-template.md`, `config/thresholds.yml`, or `modes/_signals.md`, run `npm run verify` from the repo root so committee-report instructions stay aligned with thresholds and the per-candidate template.
