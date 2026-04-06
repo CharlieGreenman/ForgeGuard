@@ -62,3 +62,16 @@ After determining the mode, load:
 - `modes/{mode}.md`
 
 Execute the instructions from the loaded mode file.
+
+---
+
+## Guardrails
+
+- Screening output is **probabilistic**. Do not present detection as proof of AI use or dishonesty.
+- **Never** auto-reject a candidate from score alone. Low scores mean prioritize human review.
+- Every flag needs **concrete evidence** (quotes, counts). Do not fabricate verification results; use WebSearch or provided sources only.
+- Full workflow, scoring bands, and report placeholders: see **`CLAUDE.md`** in the repo root.
+
+## Repo changes (maintainers)
+
+From the repo root, run **`npm run verify`** before committing upstream changes to modes, `config/thresholds.yml`, templates, examples, or this skill. The script checks that signals, thresholds, docs, and templates stay aligned.

@@ -123,6 +123,11 @@ must(
 
 const skill = join(root, ".claude", "skills", "forge-guard", "SKILL.md");
 must(existsSync(skill), `missing ${skill}`);
+const skillMd = readFileSync(skill, "utf8");
+must(
+  skillMd.includes("npm run verify"),
+  ".claude/skills/forge-guard/SKILL.md must mention npm run verify so the skill stays aligned with package.json scripts.verify"
+);
 
 for (const name of ["authentic-resume.md", "ai-generated-resume.md"]) {
   const p = join(root, "examples", name);
