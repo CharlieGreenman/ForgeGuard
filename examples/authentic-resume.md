@@ -2,6 +2,8 @@
 
 Use this as a calibration sample for `/forge-guard calibrate`. This resume demonstrates typical human writing patterns.
 
+When you score this sample with **`scan`**, PASS / REVIEW / FLAG follow **`score_ranges`** in **`config/thresholds.yml`** exactly as in **`modes/scan.md` Step 4**; qualitative authenticity bands in **`CLAUDE.md`** are narrative context only.
+
 **Maintainer note:** From the repo root, run **`npm run verify`** after editing this file or other calibration samples so examples stay aligned with `modes/_signals.md` and `config/thresholds.yml` (see `scripts/verify.mjs`).
 
 ---

@@ -345,6 +345,13 @@ for (const name of ["authentic-resume.md", "ai-generated-resume.md"]) {
     exampleMd.includes("`npm run verify`"),
     `examples/${name} must cite \`npm run verify\` after edits so maintainers run the quality gate`
   );
+  must(
+    exampleMd.includes("score_ranges") &&
+      exampleMd.includes("`config/thresholds.yml`") &&
+      exampleMd.includes("`modes/scan.md`") &&
+      exampleMd.includes("Step 4"),
+    `examples/${name} must tie PASS/REVIEW/FLAG to score_ranges in config/thresholds.yml and modes/scan.md Step 4 (align with scan and README)`
+  );
 }
 
 const pkgPath = join(root, "package.json");
