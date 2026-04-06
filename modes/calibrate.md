@@ -57,16 +57,25 @@ For each signal, compute:
 
 ### Step 5 -- Save Configuration
 
-Write adjusted thresholds to `config/thresholds.yml`:
+Write adjusted thresholds to `config/thresholds.yml`.
+
+**Keep the full file shape:** `score_ranges` (PASS / REVIEW / FLAG cutoffs) must stay present; omitting it breaks repo checks and diverges from `modes/scan.md` and `templates/report-template.md`. Only change cutoffs if you intentionally want different tier boundaries (defaults: PASS 70+, REVIEW 40–69, FLAG 0–39).
 
 ```yaml
 # Calibrated {YYYY-MM-DD}
 # Samples: {N} authentic, {N} AI-generated
 # Role type: {role}
 
+score_ranges:
+  pass: 70          # minimum score for PASS
+  review: 40        # minimum score for REVIEW (below pass)
+  flag: 0           # scores below review tier map to FLAG
+
 signals:
-  L1: { weight: -5, enabled: true }
-  L2: { weight: -3, enabled: true }
-  ...
-  V5: { weight: 0, enabled: false }
+  L1: { weight: -5, enabled: true, name: "AI hallmark vocabulary" }
+  L2: { weight: -3, enabled: true, name: "Passionate about pattern" }
+  # ... all L1–L7, S1–S7, T1–T7, M1–M7, V1–V7, X1–X7 (42 entries)
+  V5: { weight: 0, enabled: false, name: "Overly polished" }
 ```
+
+When editing, merge your weight/`enabled` changes into the existing file rather than replacing it with a partial snippet.
