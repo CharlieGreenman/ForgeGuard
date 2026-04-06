@@ -128,36 +128,62 @@ The score is transparent -- every point deduction comes with a specific signal a
 
 ## Example Output
 
+Shape matches `templates/report-template.md` (saved reports omit HTML comments from that file).
+
 ```
-## ForgeGuard Screening Report
+# Screening Report: [redacted] -- Senior AI Engineer
 
-Candidate: [redacted]
-Role: Senior AI Engineer
-Authenticity Score: 34/100
+**Date:** {DATE}
+**Authenticity Score:** 34/100
+**Recommendation:** FLAG — PASS, REVIEW, or FLAG per `score_ranges` in `config/thresholds.yml` (see `modes/scan.md` Step 4).
+**Signals triggered:** 6/42
 
-### Flags
-- [LEXICAL] 8/12 bullets start with past-tense action verb (p=0.02)
-- [LEXICAL] "Leveraged" appears 3x, "orchestrated" 2x -- AI hallmark words
-- [STRUCTURAL] All bullets are 18-22 words -- zero variance (human CVs: 8-35 word range)
-- [METRIC] "Reduced latency by 47%" -- no context, no baseline, round-ish number
-- [CROSS-SOURCE] LinkedIn shows 2 years at Company X, resume says 3.5 years
-- [CROSS-SOURCE] GitHub has 12 commits total, resume claims "led open-source framework"
-- [VOICE] Cover letter and resume have identical phrasing in 3 places -- copy-paste or same AI prompt
+---
 
-### Verified Claims
-- Education: Confirmed (university records match)
-- Current employer: Confirmed (LinkedIn)
-- Patent listed: NOT FOUND in USPTO or Google Patents
+## Signal Summary
 
-**Recommendation:** FLAG
+| Category | Signals Triggered | Deduction |
+|----------|-------------------|-----------|
+| Lexical | 2/7 | -10 |
+| Structural | 1/7 | -5 |
+| Temporal | 0/7 | 0 |
+| Metric | 1/7 | -5 |
+| Voice | 1/7 | -5 |
+| Cross-source | 2/7 | -15 |
 
-### Suggested Interview Questions:
-1. "Walk me through the latency reduction project -- what was the baseline before your changes?"
-2. "Tell me about the open-source framework you led -- what's the repo name?"
-3. "Your patent on [topic] -- what stage is it in?"
+## Flags (detailed)
+
+### [LEXICAL] AI hallmark vocabulary
+**Evidence:** "Leveraged" appears 3x, "orchestrated" 2x in a one-page resume.
+**Deduction:** -5 points (use the enabled weight from `config/thresholds.yml` when this maps to a specific signal id)
+**Confidence:** Medium
+
+### [STRUCTURAL] Bullet length uniformity
+**Evidence:** All bullets are 18–22 words — near-zero variance (human CVs often span a wider range).
+**Deduction:** -5 points
+**Confidence:** High
+
+### [CROSS-SOURCE] Tenure mismatch
+**Evidence:** LinkedIn shows 2 years at Company X; resume states 3.5 years in the same role.
+**Deduction:** -8 points
+**Confidence:** High
+
+## Verified Claims
+
+| Claim | Source | Status |
+|-------|--------|--------|
+| Education | University / registrar | Confirmed |
+| Current employer | LinkedIn | Confirmed |
+| Patent listed | USPTO / Google Patents | Not Found |
+
+## Suggested Interview Questions
+
+1. "Walk me through the latency reduction you cite — what was the baseline before your changes?"
+2. "Tell me about the open-source framework you led — what's the repo name and your main commits?"
+3. "Your patent on [topic] — what stage is it in, and where is it published?"
 ```
 
-That sample **Recommendation** line uses the same **PASS / REVIEW / FLAG** cutoffs as the rest of the repo: read `score_ranges` in `config/thresholds.yml` (see [How It Works](#how-it-works)). The score and flags are heuristics for human review, not proof of AI-generated text or dishonesty.
+The **Recommendation** line uses the same **PASS / REVIEW / FLAG** cutoffs as the rest of the repo: read `score_ranges` in `config/thresholds.yml` (see [How It Works](#how-it-works)). The score and flags are heuristics for human review, not proof of AI-generated text or dishonesty.
 
 ## Project Structure
 
