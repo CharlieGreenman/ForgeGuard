@@ -8,6 +8,9 @@ Displays aggregate screening statistics across all processed candidates.
 
 Parse `data/screenings.md` for all screening results.
 
+- If the file is **missing**, unreadable, or has **no completed rows** (header only, blank file, or no parseable scores), output a short notice instead of the dashboard template: explain that aggregates need entries from `modes/scan.md` Step 7 and/or batch summaries, and suggest running `scan` or `batch` first. **Do not invent** counts, averages, or flag frequencies.
+- Otherwise, use the same tracker columns as `modes/scan.md` Step 7 (`#`, Date, Candidate, Role, Score, Recommendation, Report) to drive Steps 2–4.
+
 ### Step 2 -- Display Dashboard
 
 Read `score_ranges` from `config/thresholds.yml` (`pass`, `review`). Count PASS / REVIEW / FLAG the same way as `modes/scan.md` Step 4 and `modes/batch.md` Step 3 (defaults when using shipped YAML: pass ≥ 70, review band 40–69, flag < 40). The “Score Distribution” histogram uses fixed buckets aligned with `CLAUDE.md` authenticity bands; it describes pool shape only and does not change when you recalibrate `score_ranges`.
