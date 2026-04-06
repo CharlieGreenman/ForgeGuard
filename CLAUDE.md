@@ -115,7 +115,7 @@ Briefly list signals evaluated but not triggered, or human-authenticity cues, wh
 
 | Claim | Source | Status |
 |-------|--------|--------|
-| ... | ... | Confirmed / Not Found / Mismatch |
+| ... | ... | Confirmed / Partial / Not Found / Mismatch |
 
 ## Suggested Interview Questions
 

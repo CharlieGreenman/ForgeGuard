@@ -174,6 +174,7 @@ Shape matches `templates/report-template.md` (saved reports omit HTML comments f
 |-------|--------|--------|
 | Education | University / registrar | Confirmed |
 | Current employer | LinkedIn | Confirmed |
+| Prior title at Acme | LinkedIn | Partial |
 | Patent listed | USPTO / Google Patents | Not Found |
 
 ## Suggested Interview Questions

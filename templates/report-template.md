@@ -47,4 +47,4 @@
 
 {NOTES}
 
-<!-- NOTES: Treat the score as a heuristic, not proof of AI use or dishonesty. Mention limited cross-source data, drafting tools, or non-native English when those factors affect interpretation. List only claims you actually checked; use Confirmed / Not Found / Mismatch from WebSearch or provided sources -- never invent verification. Strip this comment from saved candidate reports. -->
+<!-- NOTES: Treat the score as a heuristic, not proof of AI use or dishonesty. Mention limited cross-source data, drafting tools, or non-native English when those factors affect interpretation. List only claims you actually checked; use Confirmed / Partial / Not Found / Mismatch (same meanings as `modes/verify.md` Step 3) from WebSearch or provided sources -- never invent verification. Strip this comment from saved candidate reports. -->
