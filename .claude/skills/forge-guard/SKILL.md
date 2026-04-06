@@ -61,6 +61,12 @@ After determining the mode, load:
 ### Then load the mode file:
 - `modes/{mode}.md`
 
+### `scan` mode
+Also load `templates/report-template.md` when saving a per-candidate screening report (`modes/scan.md` Step 6).
+
+### `batch` mode
+Also load `templates/report-template.md` so each per-candidate report matches standalone scan output (`modes/batch.md` Step 4 and `modes/scan.md` Step 6).
+
 ### `report` mode
 Also load `templates/report-template.md` so committee output stays aligned with per-candidate report shape, headings, and PASS / REVIEW / FLAG semantics (see `modes/report.md` Step 1).
 
