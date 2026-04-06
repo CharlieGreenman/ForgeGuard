@@ -83,3 +83,5 @@ Execute the instructions from the loaded mode file.
 ## Repo changes (maintainers)
 
 From the repo root, run **`npm run verify`** before committing upstream changes to modes, `config/thresholds.yml`, templates, examples, or this skill. The script checks that signals, thresholds, docs, and templates stay aligned.
+
+For optional non-interactive passes that run verify and commit in a loop, use **`scripts/cursor-agent-loop.sh`** (see the script header and `README.md` Development).

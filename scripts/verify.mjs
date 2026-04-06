@@ -367,6 +367,10 @@ must(
     skillMd.includes("examples/ai-generated-resume.md"),
   ".claude/skills/forge-guard/SKILL.md must name examples/authentic-resume.md and examples/ai-generated-resume.md so calibrate routing matches modes/calibrate.md"
 );
+must(
+  skillMd.includes("`scripts/cursor-agent-loop.sh`"),
+  ".claude/skills/forge-guard/SKILL.md must reference `scripts/cursor-agent-loop.sh` so maintainers find the optional iteration driver (see CLAUDE.md and README.md Development)"
+);
 
 for (const name of ["authentic-resume.md", "ai-generated-resume.md"]) {
   const p = join(root, "examples", name);
