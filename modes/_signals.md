@@ -19,7 +19,7 @@ All signals are grouped into 6 categories. Each signal has a weight (max deducti
 | L7 | Corporate buzzword ratio | -5 | Buzzword-to-concrete-noun ratio above 0.4: "stakeholder alignment", "cross-functional synergy", "strategic initiatives" |
 
 ### How to check
-Read the full text. Count occurrences of each pattern. Human CVs use 0-1 of these words. AI-generated CVs use 3-8.
+Read the full text. Count occurrences of each pattern. Authentic CVs may still show a few of these terms (résumé templates, employer job-post language, or fluent non-native English); treat sparse use as lower confidence unless other lexical signals or categories corroborate. Sustained density—many distinct items or the same phrases repeated across bullets—raises confidence in an AI-drafted read.
 
 ---
 
