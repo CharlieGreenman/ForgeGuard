@@ -74,6 +74,7 @@ Execute the instructions from the loaded mode file.
 - **Never** auto-reject a candidate from score alone. Low scores mean prioritize human review.
 - **PASS / REVIEW / FLAG** follow `score_ranges` in `config/thresholds.yml` exactly as in `modes/scan.md` Step 4. Qualitative authenticity bands in `CLAUDE.md` are narrative context only; they do not override those cutoffs.
 - Every flag needs **concrete evidence** (quotes, counts). Do not fabricate verification results; use WebSearch or provided sources only.
+- **Data hygiene:** Do not commit candidate PII or hiring artifacts upstream — `data/screenings.md` and `reports/` are gitignored by design (see repo `.gitignore` and **`CLAUDE.md`**).
 - Full workflow, scoring bands, and report placeholders: see **`CLAUDE.md`** in the repo root.
 
 ## Repo changes (maintainers)

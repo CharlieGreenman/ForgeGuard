@@ -336,6 +336,16 @@ must(
   skillMd.includes("npm run verify"),
   ".claude/skills/forge-guard/SKILL.md must mention npm run verify so the skill stays aligned with package.json scripts.verify"
 );
+must(
+  skillMd.includes("config/thresholds.yml") &&
+    skillMd.includes("modes/scan.md") &&
+    skillMd.includes("Step 4"),
+  ".claude/skills/forge-guard/SKILL.md must reference config/thresholds.yml and modes/scan.md Step 4 for PASS/REVIEW/FLAG semantics"
+);
+must(
+  skillMd.includes("data/screenings.md") && skillMd.includes("reports/"),
+  ".claude/skills/forge-guard/SKILL.md must name data/screenings.md and reports/ so gitignored hiring data stays out of upstream commits"
+);
 
 for (const name of ["authentic-resume.md", "ai-generated-resume.md"]) {
   const p = join(root, "examples", name);
