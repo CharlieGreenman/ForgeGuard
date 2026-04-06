@@ -112,6 +112,15 @@ for (const name of requiredModes) {
 
 const reportTpl = join(root, "templates", "report-template.md");
 must(existsSync(reportTpl), `missing ${reportTpl}`);
+const reportTplContent = readFileSync(reportTpl, "utf8");
+must(
+  reportTplContent.includes("config/thresholds.yml"),
+  "templates/report-template.md must reference config/thresholds.yml for PASS/REVIEW/FLAG cutoffs"
+);
+must(
+  reportTplContent.includes("modes/scan.md"),
+  "templates/report-template.md must reference modes/scan.md Step 4 for recommendation tier semantics"
+);
 
 const reportModePath = join(root, "modes", "report.md");
 must(existsSync(reportModePath), `missing ${reportModePath}`);
