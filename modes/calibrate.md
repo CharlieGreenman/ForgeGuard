@@ -66,13 +66,15 @@ For each signal, compute:
 
 Write adjusted thresholds to `config/thresholds.yml`.
 
-**Keep the full file shape:** `score_ranges` (PASS / REVIEW / FLAG cutoffs) must stay present; omitting it breaks repo checks and diverges from `modes/scan.md` and `templates/report-template.md`. Only change `pass` and `review` if you intentionally want different tier boundaries (defaults: PASS 70+, REVIEW 40–69, FLAG is every score strictly below `review`, e.g. 0–39 when `review` is 40).
+**Keep the full file shape:** `score_ranges` (PASS / REVIEW / FLAG cutoffs) must stay present; omitting it breaks repo checks and diverges from `modes/scan.md` and `templates/report-template.md`. Only change `pass` and `review` if you intentionally want different tier boundaries; after edits, re-run **`npm run verify`** and align any prose that cites shipped defaults with the values now in `config/thresholds.yml`.
 
 **How `score_ranges` maps to tiers** (same semantics as `modes/scan.md` Step 4 and the header comment in `config/thresholds.yml`):
 
 - **`pass`** — minimum score for PASS: `score >= pass`.
 - **`review`** — minimum score for REVIEW: `review <= score < pass`. Every score **strictly below** `review` is FLAG.
 - **`flag`** — structural floor so validators can assert `pass > review > flag`. It is **not** an upper bound for the FLAG band; FLAG is always `score < review`.
+
+On integer scores, illustrative bands for the **shipped** `pass` / `review` in `config/thresholds.yml` match `modes/scan.md` Step 4: **PASS** if `score >= pass` (default: 70+); **REVIEW** if `review <= score < pass` (default: 40–69); **FLAG** if `score < review` (default: 0–39).
 
 ```yaml
 # Calibrated {YYYY-MM-DD}

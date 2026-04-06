@@ -200,6 +200,22 @@ must(
   calibrateMode.includes("`modes/scan.md` Step 4"),
   "modes/calibrate.md must reference `modes/scan.md` Step 4 so calibrated score_ranges stay aligned with scan tier semantics"
 );
+must(
+  calibrateMode.includes("config/thresholds.yml"),
+  "modes/calibrate.md must reference config/thresholds.yml so calibration edits stay tied to the same score_ranges as scan"
+);
+must(
+  calibrateMode.includes(`(default: ${passN}+)`),
+  `modes/calibrate.md Step 5 must document PASS default matching config/thresholds.yml (pass=${passN})`
+);
+must(
+  calibrateMode.includes(`(default: ${reviewN}–${scanReviewUpper})`),
+  `modes/calibrate.md Step 5 must document REVIEW default band matching config (review=${reviewN}, pass=${passN} → ${reviewN}–${scanReviewUpper})`
+);
+must(
+  calibrateMode.includes(`(default: 0–${scanFlagUpper})`),
+  `modes/calibrate.md Step 5 must document FLAG default integer band matching config (review=${reviewN} → 0–${scanFlagUpper})`
+);
 
 const interviewModePath = join(root, "modes", "interview.md");
 must(existsSync(interviewModePath), `missing ${interviewModePath}`);
