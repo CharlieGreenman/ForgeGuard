@@ -10,13 +10,14 @@ AI-powered application screening built on Claude Code. Detects AI-generated resu
 |------|----------|
 | `README.md` | Quick start, CLI usage, ethics, project layout |
 | `package.json` | npm scripts; run **`npm run verify`** before upstream commits |
+| `LICENSE` | MIT license text |
 | `data/screenings.md` | Screening tracker |
 | `config/thresholds.yml` | Detection thresholds |
 | `modes/_signals.md` | Signal taxonomy (42 signals) |
 | `templates/report-template.md` | Report output format |
 | `examples/` | Calibration resumes (`authentic-resume.md`, `ai-generated-resume.md`); same PASS/REVIEW/FLAG refs as scan |
 | `reports/` | Generated screening reports |
-| `scripts/verify.mjs` | Quality gate: checks thresholds, signal taxonomy, modes, template, examples, and key docs stay aligned |
+| `scripts/verify.mjs` | Quality gate: checks thresholds, signal taxonomy, modes, template, examples, LICENSE, and key docs stay aligned |
 | `scripts/cursor-agent-loop.sh` | Optional non-interactive driver for repeated repo iterations (runs verify + commit per pass; see script header) |
 | `scripts/cursor-agent-stream-format.py` | JSON stream helper for verbose loop output when using the loop script (Python 3) |
 | `.claude/skills/forge-guard/SKILL.md` | Claude Code skill router (`/forge-guard` commands) |

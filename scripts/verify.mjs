@@ -2,6 +2,7 @@
 /**
  * Lightweight repo sanity checks (no npm dependencies).
  * Run from repo root: node scripts/verify.mjs
+ * Asserts a root LICENSE file, YAML thresholds, signal taxonomy alignment, modes, template, examples, and key docs.
  */
 import { existsSync, readFileSync, readdirSync } from "fs";
 import { join, dirname } from "path";
@@ -9,6 +10,9 @@ import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
+
+const licensePath = join(root, "LICENSE");
+must(existsSync(licensePath), `missing ${licensePath}`);
 
 function must(cond, msg) {
   if (!cond) {
@@ -424,6 +428,10 @@ must(
 const claude = join(root, "CLAUDE.md");
 must(existsSync(claude), "missing CLAUDE.md");
 const claudeMd = readFileSync(claude, "utf8");
+must(
+  claudeMd.includes("| `LICENSE` |"),
+  "CLAUDE.md Main Files must list LICENSE next to other repo-root artifacts"
+);
 must(
   claudeMd.includes("npm run verify"),
   "CLAUDE.md must mention npm run verify so agent instructions stay aligned with package.json scripts.verify"
