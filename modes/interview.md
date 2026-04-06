@@ -52,7 +52,7 @@ Chronological probing:
 ### Step 3 -- Prioritize and Format
 
 Generate 5-8 questions. Order by:
-1. Highest-weight signals first
+1. Highest-weight **enabled** signals first (read each signal's `weight` and `enabled` in `config/thresholds.yml`; skip `enabled: false` ids for scoring priority — same rule as `modes/scan.md` Step 2)
 2. Cross-source mismatches second
 3. Unverified claims third
 
