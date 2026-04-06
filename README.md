@@ -157,6 +157,8 @@ Authenticity Score: 34/100
 3. "Your patent on [topic] -- what stage is it in?"
 ```
 
+That sample **Recommendation** line uses the same **PASS / REVIEW / FLAG** cutoffs as the rest of the repo: read `score_ranges` in `config/thresholds.yml` (see [How It Works](#how-it-works)). The score and flags are heuristics for human review, not proof of AI-generated text or dishonesty.
+
 ## Project Structure
 
 ```
