@@ -13,6 +13,8 @@ Screen an entire applicant pool at once.
 
 Scan the provided directory for application files. Group by candidate if naming convention allows (e.g., `lastname-resume.pdf`, `lastname-cover.pdf`).
 
+- If the path is **missing**, not a directory, **empty**, or contains **no supported application files** (PDF, MD, DOCX, TXT), stop with a short notice: explain that batch needs at least one readable application file, list what was searched, and suggest checking the path or file extensions. **Do not invent** a summary table, scores, or PASS / REVIEW / FLAG counts.
+
 ### Step 2 -- Process Each Application
 
 For each file/group, run the full `scan` mode. Use Agent subprocesses for parallelism when processing 3+ applications.
