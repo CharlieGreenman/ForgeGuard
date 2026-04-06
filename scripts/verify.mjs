@@ -58,6 +58,19 @@ for (const p of prefixes) {
   }
 }
 
+const signalsMd = join(root, "modes", "_signals.md");
+must(existsSync(signalsMd), `missing ${signalsMd}`);
+const signalsMdContent = readFileSync(signalsMd, "utf8");
+for (const p of prefixes) {
+  for (let i = 1; i <= 7; i++) {
+    const id = `${p}${i}`;
+    must(
+      signalsMdContent.includes(`| ${id} |`),
+      `modes/_signals.md missing taxonomy row for signal ${id}`
+    );
+  }
+}
+
 const modesDir = join(root, "modes");
 must(existsSync(modesDir), "missing modes/");
 const modes = readdirSync(modesDir).filter((f) => f.endsWith(".md"));
