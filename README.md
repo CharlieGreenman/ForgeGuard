@@ -157,8 +157,12 @@ Authenticity Score: 34/100
 ```
 ForgeGuard/
 ├── CLAUDE.md                    # Agent instructions
+├── LICENSE
+├── package.json                 # npm scripts (`npm run verify`)
 ├── config/
 │   └── thresholds.yml           # Detection thresholds (customizable)
+├── demo/
+│   └── demo.tape                # VHS source for README demo GIF
 ├── modes/
 │   ├── _signals.md              # Signal taxonomy (42 signals)
 │   ├── scan.md                  # Single application scan
@@ -169,6 +173,9 @@ ForgeGuard/
 │   ├── report.md                # Screening report for hiring committee
 │   ├── calibrate.md             # Threshold calibration
 │   └── dashboard.md             # Screening stats
+├── scripts/
+│   ├── verify.mjs               # Repo checks invoked by `npm run verify`
+│   └── cursor-agent-loop.sh     # Optional Cursor driver for batch iterations
 ├── templates/
 │   └── report-template.md       # Report output format
 ├── examples/

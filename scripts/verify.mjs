@@ -67,6 +67,22 @@ for (const name of requiredModes) {
 const reportTpl = join(root, "templates", "report-template.md");
 must(existsSync(reportTpl), `missing ${reportTpl}`);
 
+const skill = join(root, ".claude", "skills", "forge-guard", "SKILL.md");
+must(existsSync(skill), `missing ${skill}`);
+
+for (const name of ["authentic-resume.md", "ai-generated-resume.md"]) {
+  const p = join(root, "examples", name);
+  must(existsSync(p), `missing ${p}`);
+}
+
+const pkgPath = join(root, "package.json");
+must(existsSync(pkgPath), "missing package.json");
+const pkg = JSON.parse(readFileSync(pkgPath, "utf8"));
+must(
+  pkg.scripts?.verify === "node scripts/verify.mjs",
+  'package.json scripts.verify must be "node scripts/verify.mjs"'
+);
+
 const claude = join(root, "CLAUDE.md");
 must(existsSync(claude), "missing CLAUDE.md");
 
