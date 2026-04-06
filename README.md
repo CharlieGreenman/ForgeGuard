@@ -227,7 +227,7 @@ ForgeGuard/
 
 ## Development
 
-From the repo root, run `npm run verify` before opening a pull request or committing upstream changes. The script checks that `config/thresholds.yml`, `modes/_signals.md`, mode files, the report template, examples, and docs stay aligned (no extra npm dependencies). For optional non-interactive passes that run verify and commit in a loop, use `scripts/cursor-agent-loop.sh` (see the script header for prerequisites, environment variables, and the companion `scripts/cursor-agent-stream-format.py` stream helper).
+From the repo root, run **`npm run verify`** before opening a pull request or committing upstream changes (see **`scripts/verify.mjs`**). The script checks that `config/thresholds.yml`, `modes/_signals.md`, mode files, the report template, examples, and docs stay aligned (no extra npm dependencies). For optional non-interactive passes that run verify and commit in a loop, use `scripts/cursor-agent-loop.sh` (see the script header for prerequisites, environment variables, and the companion `scripts/cursor-agent-stream-format.py` stream helper).
 
 ## Ethical Use
 

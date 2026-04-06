@@ -498,6 +498,10 @@ must(
   devSection.includes("`npm run verify`"),
   "README.md Development must cite `npm run verify` (see package.json scripts.verify)"
 );
+must(
+  devSection.includes("`scripts/verify.mjs`"),
+  "README.md Development must cite `scripts/verify.mjs` so maintainers find the quality gate implementation"
+);
 
 const exampleOutStart = readme.indexOf("\n## Example Output");
 must(exampleOutStart !== -1, "README.md missing ## Example Output section");
