@@ -9,11 +9,14 @@ AI-powered application screening built on Claude Code. Detects AI-generated resu
 | File | Function |
 |------|----------|
 | `README.md` | Quick start, CLI usage, ethics, project layout |
+| `package.json` | npm scripts; run **`npm run verify`** before upstream commits |
 | `data/screenings.md` | Screening tracker |
 | `config/thresholds.yml` | Detection thresholds |
 | `modes/_signals.md` | Signal taxonomy (42 signals) |
 | `templates/report-template.md` | Report output format |
 | `reports/` | Generated screening reports |
+| `scripts/verify.mjs` | Quality gate: checks thresholds, signal taxonomy, modes, template, examples, and key docs stay aligned |
+| `.claude/skills/forge-guard/SKILL.md` | Claude Code skill router (`/forge-guard` commands) |
 
 ### Skill Modes
 
