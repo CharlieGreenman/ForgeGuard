@@ -14,9 +14,11 @@ Default thresholds are tuned for mid-to-senior tech roles with English-language 
 
 The user provides labeled samples:
 - Known human-written resumes (marked as authentic)
-- Known AI-generated resumes (or have the user generate some with ChatGPT/Claude)
+- Known AI-generated resumes (or have the user generate some with a general-purpose LLM)
 
 Minimum: 3 authentic + 3 AI-generated. Recommended: 10+ of each.
+
+**No private samples yet:** Use the checked-in references `examples/authentic-resume.md` and `examples/ai-generated-resume.md` (synthetic personas, not real candidates) to practice the workflow or sanity-check signal behavior. Swap in your own labeled pool before tuning thresholds for a live role.
 
 ## Workflow
 
@@ -24,7 +26,7 @@ Minimum: 3 authentic + 3 AI-generated. Recommended: 10+ of each.
 
 Ask the user for:
 1. Authentic resumes from past hires (who they know wrote their own)
-2. AI-generated resumes (user can paste a job description into ChatGPT and get one)
+2. AI-generated resumes (e.g. paste a job description into an LLM and generate a resume), or use `examples/ai-generated-resume.md` alongside `examples/authentic-resume.md` for a first pass
 
 ### Step 2 -- Score All Samples
 

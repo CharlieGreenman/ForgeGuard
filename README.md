@@ -182,8 +182,8 @@ ForgeGuard/
 ├── templates/
 │   └── report-template.md       # Report output format
 ├── examples/
-│   ├── authentic-resume.md      # Example: human-written resume
-│   └── ai-generated-resume.md   # Example: AI-generated resume
+│   ├── authentic-resume.md      # Calibration sample: human-written resume
+│   └── ai-generated-resume.md   # Calibration sample: AI-generated resume
 ├── data/                        # Screening results (gitignored)
 ├── reports/                     # Generated reports (gitignored)
 └── .claude/
