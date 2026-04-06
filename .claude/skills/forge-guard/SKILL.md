@@ -69,6 +69,7 @@ Execute the instructions from the loaded mode file.
 
 - Screening output is **probabilistic**. Do not present detection as proof of AI use or dishonesty.
 - **Never** auto-reject a candidate from score alone. Low scores mean prioritize human review.
+- **PASS / REVIEW / FLAG** follow `score_ranges` in `config/thresholds.yml` exactly as in `modes/scan.md` Step 4. Qualitative authenticity bands in `CLAUDE.md` are narrative context only; they do not override those cutoffs.
 - Every flag needs **concrete evidence** (quotes, counts). Do not fabricate verification results; use WebSearch or provided sources only.
 - Full workflow, scoring bands, and report placeholders: see **`CLAUDE.md`** in the repo root.
 

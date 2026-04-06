@@ -8,6 +8,7 @@ AI-powered application screening built on Claude Code. Detects AI-generated resu
 
 | File | Function |
 |------|----------|
+| `README.md` | Quick start, CLI usage, ethics, project layout |
 | `data/screenings.md` | Screening tracker |
 | `config/thresholds.yml` | Detection thresholds |
 | `modes/_signals.md` | Signal taxonomy (42 signals) |
