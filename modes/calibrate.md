@@ -61,7 +61,13 @@ For each signal, compute:
 
 Write adjusted thresholds to `config/thresholds.yml`.
 
-**Keep the full file shape:** `score_ranges` (PASS / REVIEW / FLAG cutoffs) must stay present; omitting it breaks repo checks and diverges from `modes/scan.md` and `templates/report-template.md`. Only change cutoffs if you intentionally want different tier boundaries (defaults: PASS 70+, REVIEW 40–69, FLAG 0–39).
+**Keep the full file shape:** `score_ranges` (PASS / REVIEW / FLAG cutoffs) must stay present; omitting it breaks repo checks and diverges from `modes/scan.md` and `templates/report-template.md`. Only change `pass` and `review` if you intentionally want different tier boundaries (defaults: PASS 70+, REVIEW 40–69, FLAG is every score strictly below `review`, e.g. 0–39 when `review` is 40).
+
+**How `score_ranges` maps to tiers** (same semantics as the header comment in `config/thresholds.yml`):
+
+- **`pass`** — minimum score for PASS: `score >= pass`.
+- **`review`** — minimum score for REVIEW: `review <= score < pass`. Every score **strictly below** `review` is FLAG.
+- **`flag`** — structural floor so validators can assert `pass > review > flag`. It is **not** an upper bound for the FLAG band; FLAG is always `score < review`.
 
 ```yaml
 # Calibrated {YYYY-MM-DD}
@@ -70,8 +76,8 @@ Write adjusted thresholds to `config/thresholds.yml`.
 
 score_ranges:
   pass: 70          # minimum score for PASS
-  review: 40        # minimum score for REVIEW (below pass)
-  flag: 0           # scores below review tier map to FLAG
+  review: 40        # minimum score for REVIEW; FLAG = score < review
+  flag: 0           # ordering floor only (see Step 5 bullets above)
 
 signals:
   L1: { weight: -5, enabled: true, name: "AI hallmark vocabulary" }
