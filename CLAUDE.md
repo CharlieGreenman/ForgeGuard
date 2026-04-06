@@ -26,6 +26,7 @@ AI-powered application screening built on Claude Code. Detects AI-generated resu
 
 | If the user... | Mode |
 |----------------|------|
+| Invokes `/forge-guard` with no arguments (command list) | `discovery` — see `.claude/skills/forge-guard/SKILL.md` |
 | Pastes a resume or points to a file | `scan` |
 | Wants to screen a folder of applications | `batch` |
 | Wants to verify claims against public sources | `verify` |
