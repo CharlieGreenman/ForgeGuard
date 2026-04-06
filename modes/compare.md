@@ -62,3 +62,9 @@ Duplicated phrases: {N}
 
 ### Consistency Score: {X}/100
 ```
+
+### Notes
+
+- Treat discrepancies as hypotheses to explore, not proof of misrepresentation. LinkedIn often lags title changes; resumes may round dates or use internal job levels.
+- The **Consistency Score** above summarizes how well sources agree in this pass. It is not the same field as the ForgeGuard authenticity score from `scan` unless you explicitly map or recompute it using the same signal model and `config/thresholds.yml` cutoffs.
+- Scores and pattern matches are probabilistic. Use them to decide what to ask in conversation, not to auto-reject (see `CLAUDE.md`).
