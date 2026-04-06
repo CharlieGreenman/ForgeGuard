@@ -76,7 +76,7 @@ Per-candidate reports must follow `templates/report-template.md`. Placeholders b
 
 **Date:** {DATE}
 **Authenticity Score:** {SCORE}/100
-**Recommendation:** {PASS / REVIEW / FLAG}
+**Recommendation:** {PASS / REVIEW / FLAG} — map to `score_ranges` in `config/thresholds.yml` (see `modes/scan.md` Step 4).
 **Signals triggered:** {TRIGGERED}/{TOTAL}
 
 ---
