@@ -19,7 +19,9 @@ For each file/group, run the full `scan` mode. Use Agent subprocesses for parall
 
 ### Step 3 -- Aggregate Results
 
-After all scans complete, build a summary table sorted by score (lowest first -- most suspicious on top):
+After all scans complete, build a summary table sorted by score (lowest first -- most suspicious on top).
+
+PASS / REVIEW / FLAG counts use the same rules as `modes/scan.md` Step 4: read `pass` and `review` from `score_ranges` in `config/thresholds.yml` (not the qualitative authenticity bands in `CLAUDE.md`).
 
 ```
 ## Batch Screening Summary -- {date}
