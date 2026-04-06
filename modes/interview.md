@@ -78,6 +78,10 @@ Based on screening score: {X}/100
 - **Depth check**: Can they explain mechanism and trade-offs, not only outcomes? Smooth surface-level replies sometimes reflect memorized bullets; sometimes they reflect a nervous day. Treat the difference as a clue, not a verdict.
 ```
 
+### Screening tier context
+
+When you build on a prior `scan` report, its **Recommendation** (PASS / REVIEW / FLAG) was derived from `score_ranges` in `config/thresholds.yml`, same rules as `modes/scan.md` Step 4. Use those cutoffs if you restate the tier; qualitative authenticity bands in `CLAUDE.md` are narrative context only. After calibration, describe bands using the current YAML values, not assumed defaults.
+
 ### Interviewer Notes
 
 - These questions are designed to be conversational, not adversarial

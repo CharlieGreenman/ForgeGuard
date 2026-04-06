@@ -129,6 +129,14 @@ must(
   "modes/calibrate.md must cite `npm run verify` after threshold edits so maintainers run the quality gate"
 );
 
+const interviewModePath = join(root, "modes", "interview.md");
+must(existsSync(interviewModePath), `missing ${interviewModePath}`);
+const interviewMode = readFileSync(interviewModePath, "utf8");
+must(
+  interviewMode.includes("config/thresholds.yml"),
+  "modes/interview.md must reference config/thresholds.yml so PASS/REVIEW/FLAG context matches scan and calibrated score_ranges"
+);
+
 const skill = join(root, ".claude", "skills", "forge-guard", "SKILL.md");
 must(existsSync(skill), `missing ${skill}`);
 const skillMd = readFileSync(skill, "utf8");
