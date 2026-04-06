@@ -320,6 +320,21 @@ must(
   `README.md How It Works diagram must match config/thresholds.yml score_ranges (pass=${passN}, review=${reviewN}; REVIEW band ${reviewN}-${reviewUpper}, FLAG <${reviewN})`
 );
 
+const authStart = readme.indexOf("## Authenticity Score");
+must(authStart !== -1, "README.md missing ## Authenticity Score section");
+const exampleOutputStart = readme.indexOf("\n## Example Output", authStart);
+must(
+  exampleOutputStart !== -1,
+  "README.md must keep ## Example Output after ## Authenticity Score"
+);
+const authSection = readme.slice(authStart, exampleOutputStart);
+must(
+  authSection.includes("`config/thresholds.yml`") &&
+    authSection.includes("modes/scan.md") &&
+    authSection.includes("Step 4"),
+  "README.md Authenticity Score must tie PASS/REVIEW/FLAG to `config/thresholds.yml` and modes/scan.md Step 4"
+);
+
 const devStart = readme.indexOf("## Development");
 must(devStart !== -1, "README.md missing ## Development section");
 const ethicalStart = readme.indexOf("\n## Ethical Use", devStart);

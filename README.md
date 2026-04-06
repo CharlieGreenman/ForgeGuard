@@ -122,7 +122,7 @@ Recommendations follow the report template (PASS / REVIEW / FLAG). Low scores me
 0-19    Almost certainly AI -- Overwhelming AI signals, fabricated claims
 ```
 
-**PASS / REVIEW / FLAG** use only the numeric cutoffs in `config/thresholds.yml` (see [How It Works](#how-it-works)). The bands above are qualitative labels for reading the score; they are not separate rules for those recommendation tiers.
+**PASS / REVIEW / FLAG** use only the numeric cutoffs in `config/thresholds.yml` (see [How It Works](#how-it-works) and `modes/scan.md` Step 4). The bands above are qualitative labels for reading the score; they are not separate rules for those recommendation tiers.
 
 The score is transparent -- every point deduction comes with a specific signal and evidence.
 
