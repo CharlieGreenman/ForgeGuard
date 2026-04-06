@@ -181,8 +181,9 @@ ForgeGuard/
 │   ├── calibrate.md             # Threshold calibration
 │   └── dashboard.md             # Screening stats
 ├── scripts/
-│   ├── verify.mjs               # Repo checks invoked by `npm run verify`
-│   └── cursor-agent-loop.sh     # Optional Cursor driver for batch iterations
+│   ├── verify.mjs                   # Repo checks invoked by `npm run verify`
+│   ├── cursor-agent-loop.sh         # Optional Cursor driver for batch iterations
+│   └── cursor-agent-stream-format.py # JSON stream helper for verbose loop output (Python 3)
 ├── templates/
 │   └── report-template.md       # Report output format
 ├── examples/
