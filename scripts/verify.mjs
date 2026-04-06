@@ -146,6 +146,21 @@ must(
   "modes/scan.md must cite `npm run verify` after threshold or taxonomy edits so maintainers run the quality gate"
 );
 
+const scanReviewUpper = passN - 1;
+const scanFlagUpper = reviewN - 1;
+must(
+  scanMode.includes(`(default: ${passN}+)`),
+  `modes/scan.md Step 4 must document PASS default matching config/thresholds.yml (pass=${passN})`
+);
+must(
+  scanMode.includes(`(default: ${reviewN}–${scanReviewUpper})`),
+  `modes/scan.md Step 4 must document REVIEW default band matching config (review=${reviewN}, pass=${passN} → ${reviewN}–${scanReviewUpper})`
+);
+must(
+  scanMode.includes(`(default: 0–${scanFlagUpper})`),
+  `modes/scan.md Step 4 must document FLAG default integer band matching config (review=${reviewN} → 0–${scanFlagUpper} on integer scores)`
+);
+
 const calibrateModePath = join(root, "modes", "calibrate.md");
 must(existsSync(calibrateModePath), `missing ${calibrateModePath}`);
 const calibrateMode = readFileSync(calibrateModePath, "utf8");
