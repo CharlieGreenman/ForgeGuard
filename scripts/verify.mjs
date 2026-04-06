@@ -137,6 +137,14 @@ must(
   "modes/interview.md must reference config/thresholds.yml so PASS/REVIEW/FLAG context matches scan and calibrated score_ranges"
 );
 
+const verifyModePath = join(root, "modes", "verify.md");
+must(existsSync(verifyModePath), `missing ${verifyModePath}`);
+const verifyMode = readFileSync(verifyModePath, "utf8");
+must(
+  verifyMode.includes("config/thresholds.yml"),
+  "modes/verify.md must reference config/thresholds.yml so combined verify + scan/report output uses the same PASS/REVIEW/FLAG cutoffs"
+);
+
 const dashboardModePath = join(root, "modes", "dashboard.md");
 must(existsSync(dashboardModePath), `missing ${dashboardModePath}`);
 const dashboardMode = readFileSync(dashboardModePath, "utf8");

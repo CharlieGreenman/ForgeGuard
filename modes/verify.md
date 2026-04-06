@@ -65,4 +65,6 @@ Not found: {N}
 | ... | ... | ... | ... | ... | ... |
 ```
 
+When you combine this pass with a `scan` authenticity score or a committee `report`, use `score_ranges` from `config/thresholds.yml` for PASS / REVIEW / FLAG so recommendation tiers match calibrated cutoffs (see `modes/scan.md` Step 4).
+
 **Important:** "Not Found" does not mean "fabricated." Many legitimate claims aren't indexed publicly. Flag it, but don't accuse.
