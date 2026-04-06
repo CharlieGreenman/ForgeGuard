@@ -5,6 +5,8 @@
 **Recommendation:** {RECOMMENDATION} — PASS, REVIEW, or FLAG per `score_ranges` in `config/thresholds.yml` (see `modes/scan.md` Step 4).
 **Signals triggered:** {TRIGGERED}/{TOTAL}
 
+<!-- {TOTAL} = count of signals with enabled: true in config/thresholds.yml (42 when all enabled). {TRIGGERED} counts only enabled ids that fired. Strip this comment from saved candidate reports. -->
+
 ---
 
 ## Signal Summary

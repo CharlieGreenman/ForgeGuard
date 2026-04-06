@@ -71,7 +71,7 @@ Generate 3-5 questions, ordered by flag severity.
 
 ### Step 6 -- Output Report
 
-Display a concise summary inline for the user. **Always save** a full report to `reports/{###}-{candidate-slug}-{YYYY-MM-DD}.md` using `templates/report-template.md` (same heading levels, section order, and placeholders: `{CANDIDATE}`, `{ROLE}`, `{DATE}`, `{SCORE}`, `{RECOMMENDATION}`, `{TRIGGERED}`, `{TOTAL}`, per-category counts and deductions, `{FLAGS}`, `{CLEAN_SIGNALS}`, `{CLAIMS}`, `{QUESTIONS}`, `{NOTES}`). Strip HTML comments from the template when writing the file.
+Display a concise summary inline for the user. **Always save** a full report to `reports/{###}-{candidate-slug}-{YYYY-MM-DD}.md` using `templates/report-template.md` (same heading levels, section order, and placeholders: `{CANDIDATE}`, `{ROLE}`, `{DATE}`, `{SCORE}`, `{RECOMMENDATION}`, `{TRIGGERED}`, `{TOTAL}`, per-category counts and deductions, `{FLAGS}`, `{CLEAN_SIGNALS}`, `{CLAIMS}`, `{QUESTIONS}`, `{NOTES}`). Set `{TOTAL}` to the number of signals with `enabled: true` in `config/thresholds.yml` (42 when every id is enabled); `{TRIGGERED}` counts only enabled signals that fired (see Step 2). Strip HTML comments from the template when writing the file.
 
 For inline display only, a shorter block is fine:
 
@@ -80,7 +80,7 @@ For inline display only, a shorter block is fine:
 
 **Authenticity Score:** {X}/100
 **Recommendation:** {PASS / REVIEW / FLAG}
-**Signals triggered:** {N}/42
+**Signals triggered:** {N}/{TOTAL}  ({TOTAL} = enabled signal count from YAML, same as full report)
 
 ### Flags
 - [{CATEGORY}] {Signal name}: {evidence} (-{weight} pts)

@@ -114,7 +114,7 @@ Use WebSearch to verify each claim. Check LinkedIn, GitHub, Google Scholar, USPT
 authenticity_score = 100 - sum(triggered_signal_weights)
 ```
 
-The sum includes only signals that both **triggered** and have `enabled: true` in `config/thresholds.yml`. A row with `enabled: false` is off the scorecard (no deduction, no increment to **Signals triggered** in the report) even if the heuristic pattern is present; see `modes/scan.md` Step 2 and `modes/calibrate.md`.
+The sum includes only signals that both **triggered** and have `enabled: true` in `config/thresholds.yml`. A row with `enabled: false` is off the scorecard (no deduction, no increment to **Signals triggered** in the report) even if the heuristic pattern is present; see `modes/scan.md` Step 2 and `modes/calibrate.md`. In saved reports, **Signals triggered:** `{TRIGGERED}/{TOTAL}` uses that same enabled count for `{TOTAL}` (not a fixed 42 unless every id is enabled).
 
 Minimum score: 0. Maximum score: 100.
 

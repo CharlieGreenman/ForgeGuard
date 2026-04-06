@@ -129,6 +129,8 @@ Briefly list signals evaluated but not triggered, or human-authenticity cues, wh
 Calibration limits, missing cross-source data, language context, or other caveats. Treat the score as a heuristic, not proof of AI use or dishonesty; list only claims actually checked.
 ```
 
+`{TOTAL}` is the number of signals with `enabled: true` in `config/thresholds.yml` (42 when all are enabled). `{TRIGGERED}` counts only enabled signals that fired — same rules as `modes/scan.md` Step 2 and Step 6.
+
 ### Stack
 
 - Claude Code (skill modes), Node.js (utilities), Markdown (data/reports)
