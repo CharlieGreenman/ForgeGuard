@@ -45,3 +45,7 @@ Read `score_ranges` from `config/thresholds.yml` (`pass`, `review`). Count PASS 
 - Last week: {N} screened, avg {X}/100
 - Flag rate trending: up/down/stable
 ```
+
+## Maintainer note
+
+Dashboard PASS / REVIEW / FLAG counts use the same `score_ranges` semantics as `modes/scan.md` Step 4. After editing `config/thresholds.yml`, run **`npm run verify`** from the repo root so signal definitions, tier cutoffs, and docs stay aligned (see `scripts/verify.mjs`).
