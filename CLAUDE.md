@@ -130,5 +130,5 @@ Calibration limits, missing cross-source data, language context, or other caveat
 
 ### Git Commits
 
-- **Never** attribute commits to Claude (no `Co-Authored-By: Claude` lines).
-- Always author commits as **CharlieGreenman** when possible.
+- **Never** add `Co-Authored-By` lines (or similar) attributing automated assistants.
+- For upstream commits, set author explicitly: `Charlie Greenman <CharlieGreenman@users.noreply.github.com>` — for example `git commit --author="Charlie Greenman <CharlieGreenman@users.noreply.github.com>" -m "type: short description"`.

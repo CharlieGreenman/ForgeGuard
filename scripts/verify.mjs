@@ -165,6 +165,10 @@ must(
   claudeMd.includes("npm run verify"),
   "CLAUDE.md must mention npm run verify so agent instructions stay aligned with package.json scripts.verify"
 );
+must(
+  claudeMd.includes("CharlieGreenman@users.noreply.github.com"),
+  "CLAUDE.md must document the upstream git author email (CharlieGreenman@users.noreply.github.com)"
+);
 
 const readmePath = join(root, "README.md");
 must(existsSync(readmePath), "missing README.md");
