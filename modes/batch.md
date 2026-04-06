@@ -54,3 +54,7 @@ Fixed score buckets below match the authenticity bands in `CLAUDE.md` (pool-leve
 ### Step 4 -- Save Reports
 
 Individual reports saved to `reports/`. Summary saved to `reports/batch-{date}.md`.
+
+## Maintainer note
+
+From the repo root, run **`npm run verify`** after editing `config/thresholds.yml`, `modes/_signals.md`, or this mode file so tier cutoffs, signal taxonomy, and docs stay aligned (see `scripts/verify.mjs`). Same pattern as `modes/scan.md`, `modes/calibrate.md`, and `modes/dashboard.md`.

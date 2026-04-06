@@ -161,6 +161,22 @@ must(
   "modes/dashboard.md must cite `npm run verify` after threshold edits so maintainers run the quality gate"
 );
 
+const batchModePath = join(root, "modes", "batch.md");
+must(existsSync(batchModePath), `missing ${batchModePath}`);
+const batchMode = readFileSync(batchModePath, "utf8");
+must(
+  batchMode.includes("`npm run verify`"),
+  "modes/batch.md must cite `npm run verify` after threshold or mode edits so maintainers run the quality gate"
+);
+
+const compareModePath = join(root, "modes", "compare.md");
+must(existsSync(compareModePath), `missing ${compareModePath}`);
+const compareMode = readFileSync(compareModePath, "utf8");
+must(
+  compareMode.includes("`npm run verify`"),
+  "modes/compare.md must cite `npm run verify` after threshold or mode edits so maintainers run the quality gate"
+);
+
 const skill = join(root, ".claude", "skills", "forge-guard", "SKILL.md");
 must(existsSync(skill), `missing ${skill}`);
 const skillMd = readFileSync(skill, "utf8");
