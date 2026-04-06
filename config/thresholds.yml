@@ -2,11 +2,18 @@
 # Adjust weights to tune for your candidate pool.
 # Run /forge-guard calibrate with known samples to optimize.
 
+# Recommendation tiers (modes/scan.md Step 4) use only `pass` and `review` on a 0–100 score:
+#   PASS   — score >= pass
+#   REVIEW — review <= score < pass
+#   FLAG   — score < review
+# Keep `flag` as the lowest value (usually 0) so tooling can assert pass > review > flag; it is not an
+# upper bound for the FLAG band — that band is everything strictly below `review`.
+
 # Score ranges
 score_ranges:
-  pass: 70          # 70+ = proceed to interview
-  review: 40        # 40-69 = needs human investigation
-  flag: 0           # 0-39 = likely AI-generated
+  pass: 70          # minimum score for PASS (default: 70+)
+  review: 40        # minimum score for REVIEW; below this maps to FLAG (default: 40–69 REVIEW, <40 FLAG)
+  flag: 0           # structural floor for ordering (see header above); FLAG uses score < review, not score < flag
 
 # Signal weights (default calibration: mid-to-senior tech roles, English)
 signals:
