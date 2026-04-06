@@ -44,11 +44,13 @@ score = max(0, score)
 
 ### Step 4 -- Determine Recommendation
 
-Read `score_ranges` from `config/thresholds.yml` (`pass`, `review`, `flag`). Those values are **minimum scores** on the 0–100 authenticity scale:
+Read `score_ranges` from `config/thresholds.yml`. **PASS / REVIEW / FLAG** use only `pass` and `review` on the 0–100 authenticity scale:
 
 - **PASS** if `score >= pass` (default: 70+)
 - **REVIEW** if `review <= score < pass` (default: 40–69)
 - **FLAG** if `score < review` (default: 0–39)
+
+The `flag` key in the same block is a structural floor so tooling can assert `pass > review > flag`; it is **not** the upper bound of the FLAG band and you do **not** use it instead of `score < review` (see the header comments in `config/thresholds.yml`).
 
 You may describe the numeric score using the authenticity bands in `CLAUDE.md` (e.g. 90–100 highly authentic, 20–39 likely AI-generated) as narrative context — but **PASS / REVIEW / FLAG** must always follow the YAML cutoffs so calibration changes stay consistent.
 
