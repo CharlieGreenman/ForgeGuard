@@ -134,6 +134,10 @@ must(
   "modes/report.md must reference templates/report-template.md so committee reports align with per-candidate output"
 );
 must(
+  reportMode.includes("modes/scan.md") && reportMode.includes("Step 4"),
+  "modes/report.md must reference modes/scan.md Step 4 for recommendation tier semantics (align with templates/report-template.md)"
+);
+must(
   reportMode.includes("`npm run verify`"),
   "modes/report.md must cite `npm run verify` after template or threshold edits so maintainers run the quality gate"
 );

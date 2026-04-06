@@ -15,7 +15,7 @@ Read completed reports from `reports/` and `data/screenings.md`. Files produced 
 
 ### Step 2 -- Generate Committee Report
 
-Read `score_ranges` from `config/thresholds.yml`. The FLAG tier is every candidate with `score < review` (default: 0–39 when `review` is 40). If thresholds were calibrated, describe bands using those values in the Summary or Notes, not hardcoded numbers.
+Read `score_ranges` from `config/thresholds.yml` (PASS / REVIEW / FLAG semantics: see `modes/scan.md` Step 4). The FLAG tier is every candidate with `score < review` (default: 0–39 when `review` is 40). If thresholds were calibrated, describe bands using those values in the Summary or Notes, not hardcoded numbers.
 
 ```markdown
 # Application Screening Report
