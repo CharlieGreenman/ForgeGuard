@@ -10,6 +10,8 @@ At least 2 of the following:
 - Cover letter
 - Application form answers
 
+If the user supplies **fewer than two** usable sources (missing files, empty paste, or only one document type), stop with a short notice: list what was received, state that compare needs at least two sources to cross-check, and suggest providing a second source or running `scan` on a single resume instead. **Do not invent** a comparison matrix, discrepancies, or scores.
+
 ## Workflow
 
 ### Step 1 -- Extract Structured Data from Each Source
