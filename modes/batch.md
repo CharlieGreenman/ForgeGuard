@@ -37,6 +37,9 @@ Flagged: {N} (score < review)
 | ... | ... | ... | ... | ... | ... | ... |
 
 ### Distribution
+
+Fixed score buckets below match the authenticity bands in `CLAUDE.md` (pool-level texture). They do **not** re-derive from `score_ranges`; the Passed / Review / Flagged counts above always follow `config/thresholds.yml` only.
+
 - 0-19 (Almost certainly AI): N candidates
 - 20-39 (Likely AI): N candidates
 - 40-69 (Needs review): N candidates
