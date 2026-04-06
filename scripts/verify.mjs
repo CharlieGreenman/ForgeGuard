@@ -121,6 +121,14 @@ must(
   "modes/report.md must reference templates/report-template.md so committee reports align with per-candidate output"
 );
 
+const calibrateModePath = join(root, "modes", "calibrate.md");
+must(existsSync(calibrateModePath), `missing ${calibrateModePath}`);
+const calibrateMode = readFileSync(calibrateModePath, "utf8");
+must(
+  calibrateMode.includes("`npm run verify`"),
+  "modes/calibrate.md must cite `npm run verify` after threshold edits so maintainers run the quality gate"
+);
+
 const skill = join(root, ".claude", "skills", "forge-guard", "SKILL.md");
 must(existsSync(skill), `missing ${skill}`);
 const skillMd = readFileSync(skill, "utf8");

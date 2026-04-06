@@ -87,3 +87,5 @@ signals:
 ```
 
 When editing, merge your weight/`enabled` changes into the existing file rather than replacing it with a partial snippet.
+
+From the repo root, run **`npm run verify`** so the edited YAML still has 42 signals, valid `score_ranges`, and aligned docs (see `scripts/verify.mjs`).
