@@ -119,3 +119,7 @@ Minimum score: 0. Maximum score: 100.
 ## Calibration
 
 Use `/forge-guard calibrate` with known samples (confirmed human-written and confirmed AI-generated) to tune thresholds for your specific candidate pool and role type. Default thresholds are calibrated for mid-to-senior tech roles.
+
+## Maintainer note
+
+From the repo root, run **`npm run verify`** after editing this file or `config/thresholds.yml` so taxonomy rows stay aligned with YAML `name:` labels, the signal count stays at 42, and related docs stay consistent (see `scripts/verify.mjs`). Same pattern as `modes/scan.md` and `modes/calibrate.md` after configuration changes.

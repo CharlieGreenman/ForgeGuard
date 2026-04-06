@@ -61,6 +61,10 @@ for (const p of prefixes) {
 const signalsMd = join(root, "modes", "_signals.md");
 must(existsSync(signalsMd), `missing ${signalsMd}`);
 const signalsMdContent = readFileSync(signalsMd, "utf8");
+must(
+  signalsMdContent.includes("`npm run verify`"),
+  "modes/_signals.md must cite `npm run verify` after taxonomy or threshold edits so maintainers run the quality gate"
+);
 for (const p of prefixes) {
   for (let i = 1; i <= 7; i++) {
     const id = `${p}${i}`;
