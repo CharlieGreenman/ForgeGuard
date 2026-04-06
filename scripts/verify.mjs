@@ -301,6 +301,10 @@ must(
   "modes/batch.md must cite `npm run verify` after threshold or mode edits so maintainers run the quality gate"
 );
 must(
+  batchMode.includes("config/thresholds.yml"),
+  "modes/batch.md must reference config/thresholds.yml so aggregate PASS/REVIEW/FLAG counts use the same score_ranges as scan"
+);
+must(
   batchMode.includes("modes/scan.md") && batchMode.includes("Step 4"),
   "modes/batch.md must reference modes/scan.md Step 4 so batch PASS/REVIEW/FLAG counts match scan tier semantics"
 );
