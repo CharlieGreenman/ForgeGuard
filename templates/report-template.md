@@ -22,6 +22,13 @@
 
 {FLAGS}
 
+<!-- FLAG ENTRY SHAPE (repeat per triggered signal; strip HTML comments from saved candidate reports):
+### [LEXICAL | STRUCTURAL | TEMPORAL | METRIC | VOICE | CROSS-SOURCE] Signal label (align with `modes/_signals.md` / `config/thresholds.yml` `name:` when citing a weighted signal)
+**Evidence:** concrete quote, count, or structural note — no fabricated checks
+**Deduction:** -X points (use the enabled weight from `config/thresholds.yml` when the flag maps to a specific signal id)
+**Confidence:** High / Medium / Low
+-->
+
 ## Clean Signals (positive indicators)
 
 {CLEAN_SIGNALS}
