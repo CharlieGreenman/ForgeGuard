@@ -49,6 +49,13 @@ Chronological probing:
 - "What were you working on between {date} and {date}?"
 - "You were at {company} for {N} years. What changed in your role over that time?"
 
+#### For Lexical or Voice Flags
+These patterns often reflect résumé templates, employer job-post language, fluent non-native English, or drafting tools — not necessarily AI or misrepresentation. Prefer open, neutral prompts that let the candidate supply specifics (same spirit as `modes/_signals.md` language context and `CLAUDE.md` lexical rules):
+- "Walk me through how you wrote or updated this résumé — did you start from a template, a coach, or from scratch?"
+- "You use a lot of strong action verbs in your bullets. Pick one achievement and tell me what you personally did day to day, in your own words."
+- "Your summary reads very polished. What would you cut if you only had two sentences to describe your impact?"
+- If tone shifts between documents: "I noticed a different style in your cover letter vs your résumé — how did you approach each?"
+
 ### Step 3 -- Prioritize and Format
 
 Generate 5-8 questions. Order by:
