@@ -121,6 +121,14 @@ must(
   "modes/report.md must reference templates/report-template.md so committee reports align with per-candidate output"
 );
 
+const scanModePath = join(root, "modes", "scan.md");
+must(existsSync(scanModePath), `missing ${scanModePath}`);
+const scanMode = readFileSync(scanModePath, "utf8");
+must(
+  scanMode.includes("`npm run verify`"),
+  "modes/scan.md must cite `npm run verify` after threshold or taxonomy edits so maintainers run the quality gate"
+);
+
 const calibrateModePath = join(root, "modes", "calibrate.md");
 must(existsSync(calibrateModePath), `missing ${calibrateModePath}`);
 const calibrateMode = readFileSync(calibrateModePath, "utf8");

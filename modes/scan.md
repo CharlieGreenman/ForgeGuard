@@ -100,3 +100,7 @@ Append to `data/screenings.md`:
 ```
 | # | Date | Candidate | Role | Score | Recommendation | Report |
 ```
+
+## Maintainer note
+
+From the repo root, run **`npm run verify`** after editing `config/thresholds.yml` or `modes/_signals.md` so signal definitions, tier cutoffs, and docs stay aligned (see `scripts/verify.mjs`). Same check as `modes/calibrate.md` and `modes/dashboard.md` after configuration changes.
