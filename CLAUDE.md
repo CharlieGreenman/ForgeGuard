@@ -126,6 +126,7 @@ Calibration limits, missing cross-source data, language context, or other caveat
 - Configuration in YAML
 - Reports in `reports/` (gitignored)
 - Screening data in `data/` (gitignored)
+- Quality gate: from the repo root run `npm run verify` (see `scripts/verify.mjs`) before committing upstream changes
 
 ### Git Commits
 

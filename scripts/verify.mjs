@@ -118,6 +118,11 @@ must(
 
 const claude = join(root, "CLAUDE.md");
 must(existsSync(claude), "missing CLAUDE.md");
+const claudeMd = readFileSync(claude, "utf8");
+must(
+  claudeMd.includes("npm run verify"),
+  "CLAUDE.md must mention npm run verify so agent instructions stay aligned with package.json scripts.verify"
+);
 
 const readmePath = join(root, "README.md");
 must(existsSync(readmePath), "missing README.md");
