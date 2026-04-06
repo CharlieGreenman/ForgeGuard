@@ -11,7 +11,7 @@ Generates a polished, shareable screening report suitable for sending to a hirin
 
 ### Step 1 -- Gather Data
 
-Read completed reports from `reports/` and `data/screenings.md`.
+Read completed reports from `reports/` and `data/screenings.md`. Files produced by `scan` or `batch` should match `templates/report-template.md` (headings, section order, PASS/REVIEW/FLAG semantics from `config/thresholds.yml`); use that shape when parsing scores and flags into this summary.
 
 ### Step 2 -- Generate Committee Report
 

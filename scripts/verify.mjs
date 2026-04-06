@@ -92,6 +92,14 @@ for (const name of requiredModes) {
 const reportTpl = join(root, "templates", "report-template.md");
 must(existsSync(reportTpl), `missing ${reportTpl}`);
 
+const reportModePath = join(root, "modes", "report.md");
+must(existsSync(reportModePath), `missing ${reportModePath}`);
+const reportMode = readFileSync(reportModePath, "utf8");
+must(
+  reportMode.includes("templates/report-template.md"),
+  "modes/report.md must reference templates/report-template.md so committee reports align with per-candidate output"
+);
+
 const skill = join(root, ".claude", "skills", "forge-guard", "SKILL.md");
 must(existsSync(skill), `missing ${skill}`);
 
