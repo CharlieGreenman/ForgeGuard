@@ -128,7 +128,7 @@ The score is transparent -- every point deduction comes with a specific signal a
 
 ## Example Output
 
-Shape matches `templates/report-template.md` (saved reports omit HTML comments from that file).
+Shape matches `templates/report-template.md` (saved reports omit HTML comments from that file). After changing that template, `modes/_signals.md`, `config/thresholds.yml`, or files under `examples/`, run **`npm run verify`** from the repo root so reports, signals, and thresholds stay aligned.
 
 ```
 # Screening Report: [redacted] -- Senior AI Engineer

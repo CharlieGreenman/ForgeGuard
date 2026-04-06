@@ -491,4 +491,17 @@ must(
   "README.md Development must cite `npm run verify` (see package.json scripts.verify)"
 );
 
+const exampleOutStart = readme.indexOf("\n## Example Output");
+must(exampleOutStart !== -1, "README.md missing ## Example Output section");
+const projStructStart = readme.indexOf("\n## Project Structure", exampleOutStart);
+must(
+  projStructStart !== -1,
+  "README.md must keep ## Project Structure after ## Example Output"
+);
+const exampleOutSection = readme.slice(exampleOutStart, projStructStart);
+must(
+  exampleOutSection.includes("`npm run verify`"),
+  "README.md Example Output must cite `npm run verify` so maintainers run the quality gate after template or example edits"
+);
+
 console.log("verify: ok");
