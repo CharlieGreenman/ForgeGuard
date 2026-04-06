@@ -114,6 +114,8 @@ authenticity_score = 100 - sum(triggered_signal_weights)
 
 Minimum score: 0. Maximum score: 100.
 
+**Recommendation tiers (PASS / REVIEW / FLAG):** Use `score_ranges` in `config/thresholds.yml` with the same rules as `modes/scan.md` Step 4 (`pass` and `review` are minimum scores on the 0–100 scale). Qualitative authenticity bands used elsewhere in the repo (for example 90–100 highly authentic) are narrative context only; they do not override those YAML cutoffs.
+
 **Confidence adjustment:** If fewer than 3 cross-source signals could be checked (limited public info), add a note: "Score based on document analysis only -- cross-source verification limited."
 
 ## Calibration

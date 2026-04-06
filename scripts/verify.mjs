@@ -65,6 +65,13 @@ must(
   signalsMdContent.includes("`npm run verify`"),
   "modes/_signals.md must cite `npm run verify` after taxonomy or threshold edits so maintainers run the quality gate"
 );
+must(
+  signalsMdContent.includes("score_ranges") &&
+    signalsMdContent.includes("config/thresholds.yml") &&
+    signalsMdContent.includes("modes/scan.md") &&
+    signalsMdContent.includes("Step 4"),
+  "modes/_signals.md must tie PASS/REVIEW/FLAG to score_ranges in config/thresholds.yml and modes/scan.md Step 4"
+);
 for (const p of prefixes) {
   for (let i = 1; i <= 7; i++) {
     const id = `${p}${i}`;
