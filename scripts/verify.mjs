@@ -171,6 +171,10 @@ must(
   reportMode.includes(`(default: 0–${scanFlagUpper})`),
   `modes/report.md Step 2 must document FLAG default integer band matching config (review=${reviewN} → 0–${scanFlagUpper})`
 );
+must(
+  reportMode.includes("modes/verify.md") && reportMode.includes("Step 3"),
+  "modes/report.md must reference modes/verify.md Step 3 so committee summaries keep the same claim status semantics as scan and the report template"
+);
 
 const scanModePath = join(root, "modes", "scan.md");
 must(existsSync(scanModePath), `missing ${scanModePath}`);
