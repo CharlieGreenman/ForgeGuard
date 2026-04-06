@@ -7,6 +7,13 @@ Generates a polished, shareable screening report suitable for sending to a hirin
 - One or more completed screening reports from `scan` mode
 - Or specify candidates to include
 
+## Guardrails
+
+- Committee summaries aggregate **heuristic** scan output. Do not present scores or tiers as proof of AI-generated text or dishonesty (see `CLAUDE.md`).
+- **Never** recommend auto-reject from a tier, score, or flag list alone. "Deep human review" means prioritize investigation and conversation — not a hiring outcome.
+- Carry forward only verification statuses that appear in the underlying per-candidate materials. **Do not invent** Confirmed / Partial / Not Found / Mismatch rows for the committee report if those claims were not actually checked (same bar as `modes/verify.md` Step 3).
+- **Bias awareness:** When lexical or voice flags dominate a candidate's summary, note that templates, drafting tools, job-post phrasing, or fluent non-native English can resemble AI surface patterns — weigh alongside concrete discrepancies and verified claims.
+
 ## Workflow
 
 ### Step 1 -- Gather Data
