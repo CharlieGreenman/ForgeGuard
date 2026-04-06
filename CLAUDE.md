@@ -14,6 +14,7 @@ AI-powered application screening built on Claude Code. Detects AI-generated resu
 | `config/thresholds.yml` | Detection thresholds |
 | `modes/_signals.md` | Signal taxonomy (42 signals) |
 | `templates/report-template.md` | Report output format |
+| `examples/` | Calibration resumes (`authentic-resume.md`, `ai-generated-resume.md`); same PASS/REVIEW/FLAG refs as scan |
 | `reports/` | Generated screening reports |
 | `scripts/verify.mjs` | Quality gate: checks thresholds, signal taxonomy, modes, template, examples, and key docs stay aligned |
 | `scripts/cursor-agent-loop.sh` | Optional non-interactive driver for repeated repo iterations (runs verify + commit per pass; see script header) |

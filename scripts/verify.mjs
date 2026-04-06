@@ -391,6 +391,10 @@ must(
   claudeMd.includes("`scripts/cursor-agent-stream-format.py`"),
   "CLAUDE.md Main Files must list scripts/cursor-agent-stream-format.py alongside the loop script"
 );
+must(
+  claudeMd.includes("`examples/`"),
+  "CLAUDE.md Main Files must list examples/ (checked-in calibration resumes)"
+);
 const scoringStart = claudeMd.indexOf("### Scoring Model");
 must(scoringStart !== -1, "CLAUDE.md missing ### Scoring Model section");
 const rulesHeading = "\n### Rules";
