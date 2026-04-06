@@ -2,10 +2,8 @@
 
 **Date:** {DATE}
 **Authenticity Score:** {SCORE}/100
-**Recommendation:** {RECOMMENDATION}
+**Recommendation:** {RECOMMENDATION} — PASS, REVIEW, or FLAG per `score_ranges` in `config/thresholds.yml` (see `modes/scan.md` Step 4).
 **Signals triggered:** {TRIGGERED}/{TOTAL}
-
-<!-- RECOMMENDATION: use PASS, REVIEW, or FLAG per score_ranges in config/thresholds.yml (see modes/scan.md Step 4). Strip this comment from saved candidate reports. -->
 
 ---
 
