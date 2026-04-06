@@ -7,6 +7,13 @@ Generates targeted interview questions designed to verify claims that triggered 
 - A screening report from `scan` mode, OR
 - A resume to scan fresh and generate questions from
 
+## Guardrails
+
+- Questions surface **what to verify**, not a verdict. Screening signals are **probabilistic**; weigh answers alongside the full application, cross-source context, and any claim checks you ran (see `CLAUDE.md`).
+- **Never** auto-reject from authenticity score or from a single interview answer. Use tiers from `score_ranges` in `config/thresholds.yml` exactly as in `modes/scan.md` Step 4 to decide what needs follow-up — not a final hire / no-hire outcome.
+- When you restate PASS / REVIEW / FLAG, use those YAML cutoffs; qualitative authenticity bands in `CLAUDE.md` are narrative context only.
+- Tie each prompt to **concrete evidence** (flag labels, quotes, named discrepancies). Do not invent employers, metrics, or events that are not in the materials.
+
 ## Workflow
 
 ### Step 1 -- Identify Verification Targets
