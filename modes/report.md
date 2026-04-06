@@ -15,7 +15,7 @@ Read completed reports from `reports/` and `data/screenings.md`. Files produced 
 
 ### Step 2 -- Generate Committee Report
 
-Read `score_ranges` from `config/thresholds.yml` (PASS / REVIEW / FLAG semantics: see `modes/scan.md` Step 4). The FLAG tier is every candidate with `score < review` (default: 0–39 when `review` is 40). If thresholds were calibrated, describe bands using those values in the Summary or Notes, not hardcoded numbers.
+Read `score_ranges` from `config/thresholds.yml` (PASS / REVIEW / FLAG semantics: see `modes/scan.md` Step 4). Shipped integer-score defaults match that step: **PASS** if `score >= pass` (default: 70+), **REVIEW** if `review <= score < pass` (default: 40–69), **FLAG** if `score < review` (default: 0–39). After calibration, describe bands using the YAML values in the Summary or Notes instead of these defaults.
 
 ```markdown
 # Application Screening Report

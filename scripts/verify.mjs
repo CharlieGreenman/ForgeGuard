@@ -44,6 +44,9 @@ must(
   `config/thresholds.yml score_ranges must satisfy pass > review > flag (got pass=${passN}, review=${reviewN}, flag=${flagN})`
 );
 
+const scanReviewUpper = passN - 1;
+const scanFlagUpper = reviewN - 1;
+
 const sigBlock = yml.slice(signalsStart);
 const sigLines = sigBlock.match(/^\s{2}[LSTMVX][1-7]:/gm);
 must(sigLines && sigLines.length === 42, `expected 42 signal entries in thresholds.yml, found ${sigLines?.length ?? 0}`);
@@ -148,6 +151,22 @@ must(
   reportMode.includes("`npm run verify`"),
   "modes/report.md must cite `npm run verify` after template or threshold edits so maintainers run the quality gate"
 );
+must(
+  reportMode.includes("config/thresholds.yml"),
+  "modes/report.md must reference config/thresholds.yml so committee summaries use the same score_ranges as scan"
+);
+must(
+  reportMode.includes(`(default: ${passN}+)`),
+  `modes/report.md Step 2 must document PASS default matching config/thresholds.yml (pass=${passN})`
+);
+must(
+  reportMode.includes(`(default: ${reviewN}–${scanReviewUpper})`),
+  `modes/report.md Step 2 must document REVIEW default band matching config (review=${reviewN}, pass=${passN} → ${reviewN}–${scanReviewUpper})`
+);
+must(
+  reportMode.includes(`(default: 0–${scanFlagUpper})`),
+  `modes/report.md Step 2 must document FLAG default integer band matching config (review=${reviewN} → 0–${scanFlagUpper})`
+);
 
 const scanModePath = join(root, "modes", "scan.md");
 must(existsSync(scanModePath), `missing ${scanModePath}`);
@@ -157,8 +176,6 @@ must(
   "modes/scan.md must cite `npm run verify` after threshold or taxonomy edits so maintainers run the quality gate"
 );
 
-const scanReviewUpper = passN - 1;
-const scanFlagUpper = reviewN - 1;
 must(
   scanMode.includes(`(default: ${passN}+)`),
   `modes/scan.md Step 4 must document PASS default matching config/thresholds.yml (pass=${passN})`
