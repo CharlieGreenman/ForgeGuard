@@ -65,7 +65,7 @@ The authenticity score is computed from 42 signals across 6 categories. Each sig
 2. Show per-signal evidence for every flag
 3. Generate suggested interview questions for flagged areas
 4. Note when a signal has low confidence
-5. Recommend human review for scores between 40-69
+5. Recommend human review for scores in the REVIEW tier (`review <= score < pass` per `config/thresholds.yml`; shipped defaults: 40–69 when `review` is 40 and `pass` is 70)
 
 ### Report Format
 

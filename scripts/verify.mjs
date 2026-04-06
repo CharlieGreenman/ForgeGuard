@@ -240,6 +240,18 @@ must(
   "CLAUDE.md Scoring Model must tie PASS/REVIEW/FLAG to score_ranges in config/thresholds.yml (see modes/scan.md Step 4)"
 );
 
+const alwaysHeading = "\n**ALWAYS:**";
+const alwaysStart = claudeMd.indexOf(alwaysHeading, rulesStart);
+must(alwaysStart !== -1, "CLAUDE.md must keep **ALWAYS:** under ### Rules");
+const alwaysEnd = claudeMd.indexOf("\n### ", alwaysStart + 1);
+must(alwaysEnd !== -1, "CLAUDE.md must keep a ### heading after **ALWAYS:** rules");
+const alwaysSection = claudeMd.slice(alwaysStart, alwaysEnd);
+must(
+  alwaysSection.includes("review <= score < pass") &&
+    alwaysSection.includes("config/thresholds.yml"),
+  "CLAUDE.md ALWAYS rules must tie human-review guidance to the REVIEW band in config/thresholds.yml (see modes/scan.md Step 4)"
+);
+
 const readmePath = join(root, "README.md");
 must(existsSync(readmePath), "missing README.md");
 const readme = readFileSync(readmePath, "utf8");
