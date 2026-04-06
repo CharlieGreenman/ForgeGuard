@@ -2,6 +2,8 @@
 
 All signals are grouped into 6 categories. Each signal has a weight (max deduction) and a confidence level. The authenticity score starts at 100 and deductions are applied when signals trigger.
 
+**Language and drafting context:** Fluent writers, non-native English speakers, and candidates who use grammar checkers, translation aids, or résumé templates may trigger individual lexical or voice signals without an AI-drafted application. Prefer lower confidence and explicit Notes when a pattern could plausibly reflect human style or tooling; combine lexical or voice findings with structural, temporal, metric, or cross-source signals before treating them as strong AI-generation indicators.
+
 ---
 
 ## Category 1: Lexical (7 signals, max -25 points)
