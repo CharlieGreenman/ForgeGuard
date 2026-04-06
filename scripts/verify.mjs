@@ -247,6 +247,10 @@ must(
   compareMode.includes("`npm run verify`"),
   "modes/compare.md must cite `npm run verify` after threshold or mode edits so maintainers run the quality gate"
 );
+must(
+  compareMode.includes("modes/scan.md") && compareMode.includes("Step 4"),
+  "modes/compare.md must reference modes/scan.md Step 4 so compare output stays aligned with PASS/REVIEW/FLAG tier semantics when combined with scan"
+);
 
 const skill = join(root, ".claude", "skills", "forge-guard", "SKILL.md");
 must(existsSync(skill), `missing ${skill}`);

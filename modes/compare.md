@@ -67,8 +67,9 @@ Duplicated phrases: {N}
 
 - Treat discrepancies as hypotheses to explore, not proof of misrepresentation. LinkedIn often lags title changes; resumes may round dates or use internal job levels.
 - The **Consistency Score** above summarizes how well sources agree in this pass. It is not the same field as the ForgeGuard authenticity score from `scan` unless you explicitly map or recompute it using the same signal model and `config/thresholds.yml` cutoffs.
+- When you combine this analysis with a `scan` report or cite PASS / REVIEW / FLAG, use `score_ranges` in `config/thresholds.yml` exactly as in `modes/scan.md` Step 4 — not the qualitative authenticity bands in `CLAUDE.md` alone.
 - Scores and pattern matches are probabilistic. Use them to decide what to ask in conversation, not to auto-reject (see `CLAUDE.md`).
 
 ## Maintainer note
 
-From the repo root, run **`npm run verify`** after editing `config/thresholds.yml`, `modes/_signals.md`, or this mode file so cross-source signal labels, tier cutoffs, and docs stay aligned (see `scripts/verify.mjs`). Same pattern as `modes/scan.md`, `modes/calibrate.md`, and `modes/dashboard.md`.
+From the repo root, run **`npm run verify`** after editing `config/thresholds.yml`, `modes/_signals.md`, or this mode file so cross-source signal labels, tier cutoffs, and docs stay aligned (see `scripts/verify.mjs`). PASS / REVIEW / FLAG semantics match `modes/scan.md` Step 4 and `modes/dashboard.md` / `modes/batch.md` aggregation rules.
