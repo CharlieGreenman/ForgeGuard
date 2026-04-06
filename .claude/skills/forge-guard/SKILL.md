@@ -61,6 +61,9 @@ After determining the mode, load:
 ### Then load the mode file:
 - `modes/{mode}.md`
 
+### `report` mode
+Also load `templates/report-template.md` so committee output stays aligned with per-candidate report shape, headings, and PASS / REVIEW / FLAG semantics (see `modes/report.md` Step 1).
+
 Execute the instructions from the loaded mode file.
 
 ---
