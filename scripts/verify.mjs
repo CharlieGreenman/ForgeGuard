@@ -320,6 +320,14 @@ must(
   batchMode.includes(`(default: 0–${scanFlagUpper})`),
   `modes/batch.md Step 3 must document FLAG default integer band matching config (review=${reviewN} → 0–${scanFlagUpper})`
 );
+must(
+  batchMode.includes("templates/report-template.md"),
+  "modes/batch.md must reference templates/report-template.md so batch per-candidate reports match scan output shape"
+);
+must(
+  /modes\/scan\.md[^\n]*Step 6/.test(batchMode),
+  "modes/batch.md must reference modes/scan.md Step 6 for per-candidate report saves (template alignment)"
+);
 
 const compareModePath = join(root, "modes", "compare.md");
 must(existsSync(compareModePath), `missing ${compareModePath}`);

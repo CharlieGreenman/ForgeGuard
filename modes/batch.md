@@ -59,7 +59,7 @@ Fixed score buckets below match the authenticity bands in `CLAUDE.md` (pool-leve
 
 ### Step 4 -- Save Reports
 
-Individual reports saved to `reports/`. Summary saved to `reports/batch-{date}.md`.
+Individual per-candidate reports go to `reports/` with the same structure as a standalone scan: use `templates/report-template.md` per **`modes/scan.md` Step 6** (strip template HTML comments; tracker rows per Step 7). Batch summary artifact: `reports/batch-{date}.md` from Step 3.
 
 ## Maintainer note
 
