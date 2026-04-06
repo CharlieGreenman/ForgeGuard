@@ -264,6 +264,18 @@ must(
   batchMode.includes("modes/scan.md") && batchMode.includes("Step 4"),
   "modes/batch.md must reference modes/scan.md Step 4 so batch PASS/REVIEW/FLAG counts match scan tier semantics"
 );
+must(
+  batchMode.includes(`(default: ${passN}+)`),
+  `modes/batch.md Step 3 must document PASS default matching config/thresholds.yml (pass=${passN})`
+);
+must(
+  batchMode.includes(`(default: ${reviewN}–${scanReviewUpper})`),
+  `modes/batch.md Step 3 must document REVIEW default band matching config (review=${reviewN}, pass=${passN} → ${reviewN}–${scanReviewUpper})`
+);
+must(
+  batchMode.includes(`(default: 0–${scanFlagUpper})`),
+  `modes/batch.md Step 3 must document FLAG default integer band matching config (review=${reviewN} → 0–${scanFlagUpper})`
+);
 
 const compareModePath = join(root, "modes", "compare.md");
 must(existsSync(compareModePath), `missing ${compareModePath}`);

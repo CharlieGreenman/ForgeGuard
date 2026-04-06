@@ -23,7 +23,7 @@ For each file/group, run the full `scan` mode. Use Agent subprocesses for parall
 
 After all scans complete, build a summary table sorted by score (lowest first -- most suspicious on top).
 
-PASS / REVIEW / FLAG counts use the same rules as `modes/scan.md` Step 4: read `pass` and `review` from `score_ranges` in `config/thresholds.yml` (not the qualitative authenticity bands in `CLAUDE.md`).
+PASS / REVIEW / FLAG counts use the same rules as `modes/scan.md` Step 4: read `pass` and `review` from `score_ranges` in `config/thresholds.yml` (not the qualitative authenticity bands in `CLAUDE.md`). Shipped integer-score defaults match that step: **PASS** if `score >= pass` (default: 70+), **REVIEW** if `review <= score < pass` (default: 40–69), **FLAG** if `score < review` (default: 0–39). After calibration, describe bands using the YAML values in the summary notes instead of these defaults.
 
 ```
 ## Batch Screening Summary -- {date}
