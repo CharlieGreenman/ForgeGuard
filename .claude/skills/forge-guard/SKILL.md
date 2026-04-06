@@ -38,9 +38,9 @@ forge-guard -- Application Screening
 Available commands:
   /forge-guard {resume}     --> SCAN: full AI detection on a single application
   /forge-guard batch {dir}  --> Batch screen a folder of applications
-  /forge-guard verify       --> Cross-reference claims against public sources
+  /forge-guard verify {resume} --> Cross-reference claims against public sources
   /forge-guard compare      --> Compare resume vs LinkedIn vs cover letter
-  /forge-guard interview    --> Generate verification interview questions
+  /forge-guard interview {resume} --> Generate verification interview questions
   /forge-guard report       --> Screening report for hiring committee
   /forge-guard calibrate    --> Calibrate thresholds with known samples
   /forge-guard dashboard    --> View screening stats

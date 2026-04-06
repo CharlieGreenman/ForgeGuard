@@ -165,4 +165,17 @@ must(
   `README.md How It Works diagram must match config/thresholds.yml score_ranges (pass=${passN}, review=${reviewN}; REVIEW band ${reviewN}-${reviewUpper}, FLAG <${reviewN})`
 );
 
+const devStart = readme.indexOf("## Development");
+must(devStart !== -1, "README.md missing ## Development section");
+const ethicalStart = readme.indexOf("\n## Ethical Use", devStart);
+must(
+  ethicalStart !== -1,
+  "README.md must keep ## Ethical Use after ## Development so the Development section can be validated"
+);
+const devSection = readme.slice(devStart, ethicalStart);
+must(
+  devSection.includes("`npm run verify`"),
+  "README.md Development must cite `npm run verify` (see package.json scripts.verify)"
+);
+
 console.log("verify: ok");
