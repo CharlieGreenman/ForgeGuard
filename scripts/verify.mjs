@@ -212,6 +212,14 @@ const dashboardModePath = join(root, "modes", "dashboard.md");
 must(existsSync(dashboardModePath), `missing ${dashboardModePath}`);
 const dashboardMode = readFileSync(dashboardModePath, "utf8");
 must(
+  dashboardMode.includes("config/thresholds.yml"),
+  "modes/dashboard.md must reference config/thresholds.yml so aggregate PASS/REVIEW/FLAG counts match calibrated score_ranges"
+);
+must(
+  dashboardMode.includes("modes/scan.md") && dashboardMode.includes("Step 4"),
+  "modes/dashboard.md must reference modes/scan.md Step 4 so dashboard tier semantics match scan"
+);
+must(
   dashboardMode.includes("`npm run verify`"),
   "modes/dashboard.md must cite `npm run verify` after threshold edits so maintainers run the quality gate"
 );
