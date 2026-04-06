@@ -306,6 +306,14 @@ must(
   claudeMd.includes("CharlieGreenman@users.noreply.github.com"),
   "CLAUDE.md must document the upstream git author email (CharlieGreenman@users.noreply.github.com)"
 );
+must(
+  claudeMd.includes("`scripts/cursor-agent-loop.sh`"),
+  "CLAUDE.md Main Files must list scripts/cursor-agent-loop.sh so maintainers find the optional iteration driver"
+);
+must(
+  claudeMd.includes("`scripts/cursor-agent-stream-format.py`"),
+  "CLAUDE.md Main Files must list scripts/cursor-agent-stream-format.py alongside the loop script"
+);
 const scoringStart = claudeMd.indexOf("### Scoring Model");
 must(scoringStart !== -1, "CLAUDE.md missing ### Scoring Model section");
 const rulesHeading = "\n### Rules";
