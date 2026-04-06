@@ -25,9 +25,10 @@ After all scans complete, build a summary table sorted by score (lowest first --
 ## Batch Screening Summary -- {date}
 
 Processed: {N} applications
-Flagged: {N} (score < 40)
-Review: {N} (score 40-69)
-Passed: {N} (score 70+)
+(Use `score_ranges` from `config/thresholds.yml` for the next three lines: pass = minimum score for PASS, review = minimum for REVIEW.)
+Passed: {N} (score ≥ pass)
+Review: {N} (review ≤ score < pass)
+Flagged: {N} (score < review)
 
 | # | Candidate | Role | Score | Recommendation | Top Flag | Report |
 |---|-----------|------|-------|----------------|----------|--------|

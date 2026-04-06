@@ -29,9 +29,9 @@ Read completed reports from `reports/` and `data/screenings.md`.
 
 | Tier | Count | Action |
 |------|-------|--------|
-| Proceed to interview | {N} | Score 70+, claims verified |
-| Needs investigation | {N} | Score 40-69, specific flags noted |
-| Deep human review | {N} | Score <40, strong AI signals -- no auto-reject; decide after review |
+| Proceed to interview | {N} | Score ≥ `pass` from `config/thresholds.yml`, claims verified where checked |
+| Needs investigation | {N} | Score in REVIEW band (`review` ≤ score < `pass`), specific flags noted |
+| Deep human review | {N} | Score below `review` threshold, strong AI signals -- no auto-reject; decide after review |
 
 ## Proceed to Interview
 

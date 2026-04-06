@@ -44,13 +44,15 @@ score = max(0, score)
 
 ### Step 4 -- Determine Recommendation
 
-| Score | Recommendation |
-|-------|----------------|
-| 90-100 | PASS -- Highly authentic, proceed to interview |
-| 70-89 | PASS -- Likely authentic, minor flags noted |
-| 40-69 | REVIEW -- Multiple signals, needs human investigation |
-| 20-39 | FLAG -- Likely AI-generated, investigate before proceeding |
-| 0-19 | FLAG -- Almost certainly AI-generated |
+Read `score_ranges` from `config/thresholds.yml` (`pass`, `review`, `flag`). Those values are **minimum scores** on the 0–100 authenticity scale:
+
+- **PASS** if `score >= pass` (default: 70+)
+- **REVIEW** if `review <= score < pass` (default: 40–69)
+- **FLAG** if `score < review` (default: 0–39)
+
+You may describe the numeric score using the authenticity bands in `CLAUDE.md` (e.g. 90–100 highly authentic, 20–39 likely AI-generated) as narrative context — but **PASS / REVIEW / FLAG** must always follow the YAML cutoffs so calibration changes stay consistent.
+
+Scores are probabilistic. Never auto-reject from score alone.
 
 ### Step 5 -- Generate Interview Questions
 

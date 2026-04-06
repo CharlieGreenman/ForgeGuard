@@ -5,6 +5,8 @@
 **Recommendation:** {RECOMMENDATION}
 **Signals triggered:** {TRIGGERED}/{TOTAL}
 
+<!-- RECOMMENDATION: use PASS, REVIEW, or FLAG per score_ranges in config/thresholds.yml (see modes/scan.md Step 4). Strip this comment from saved candidate reports. -->
+
 ---
 
 ## Signal Summary
