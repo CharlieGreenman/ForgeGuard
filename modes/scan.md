@@ -27,10 +27,12 @@ Identify what was provided:
 
 Load `modes/_signals.md`. Run all 42 signals across the 6 categories against the provided content.
 
-For each signal:
+For each signal, read its `enabled` field in `config/thresholds.yml`. If `enabled: false`, do **not** count it toward the authenticity score or toward **Signals triggered** in the report; you may mention the pattern in **Notes** at Low confidence when it helps human reviewers, but skip weight deduction and detailed flag rows for that id (see `modes/calibrate.md` for why signals are disabled).
+
+For each **enabled** signal:
 1. Check if the signal triggers
 2. Record the specific evidence (exact quotes, counts, patterns)
-3. Apply the weight deduction
+3. Apply the weight deduction from YAML (`weight`, respecting `enabled: true` only)
 4. Assign confidence: High (clear evidence), Medium (probable), Low (ambiguous)
 
 **Only trigger a signal if you have concrete evidence.** Do not guess.

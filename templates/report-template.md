@@ -25,7 +25,7 @@
 <!-- FLAG ENTRY SHAPE (repeat per triggered signal; strip HTML comments from saved candidate reports):
 ### [LEXICAL | STRUCTURAL | TEMPORAL | METRIC | VOICE | CROSS-SOURCE] Signal label (align with `modes/_signals.md` / `config/thresholds.yml` `name:` when citing a weighted signal)
 **Evidence:** concrete quote, count, or structural note — no fabricated checks
-**Deduction:** -X points (use the enabled weight from `config/thresholds.yml` when the flag maps to a specific signal id)
+**Deduction:** -X points (use the weight from `config/thresholds.yml` for that signal id only when `enabled: true`; do not emit a scored flag row for disabled ids)
 **Confidence:** High / Medium / Low
 -->
 

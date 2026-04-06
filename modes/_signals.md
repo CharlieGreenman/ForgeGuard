@@ -114,6 +114,8 @@ Use WebSearch to verify each claim. Check LinkedIn, GitHub, Google Scholar, USPT
 authenticity_score = 100 - sum(triggered_signal_weights)
 ```
 
+The sum includes only signals that both **triggered** and have `enabled: true` in `config/thresholds.yml`. A row with `enabled: false` is off the scorecard (no deduction, no increment to **Signals triggered** in the report) even if the heuristic pattern is present; see `modes/scan.md` Step 2 and `modes/calibrate.md`.
+
 Minimum score: 0. Maximum score: 100.
 
 **Recommendation tiers (PASS / REVIEW / FLAG):** Use `score_ranges` in `config/thresholds.yml` with the same rules as `modes/scan.md` Step 4 (`pass` and `review` are minimum scores on the 0–100 scale). Qualitative authenticity bands used elsewhere in the repo (for example 90–100 highly authentic) are narrative context only; they do not override those YAML cutoffs.
