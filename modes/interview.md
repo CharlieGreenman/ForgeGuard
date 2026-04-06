@@ -73,9 +73,9 @@ Based on screening score: {X}/100
 5. {question}
 
 ### What to Listen For
-- **Authentic answers** include: specific names, dates, frustrations, mistakes, and "I don't remember exactly but..."
-- **Fabricated answers** include: generic descriptions, no names, no mistakes, everything went perfectly
-- **Key tell**: Can they go one level deeper? Anyone can memorize a bullet point. Ask "why" and "how" to get below the surface.
+- **Rich, specific answers** often include: names, dates, frustrations, mistakes, and hedges like "I don't remember exactly but..."
+- **Shallow or generic answers** warrant follow-up — they are **not** proof of fabrication, AI use, or dishonesty; anxiety, NDAs, or interview style can look the same. Probe with neutral "how" and "why" before updating your assessment.
+- **Depth check**: Can they explain mechanism and trade-offs, not only outcomes? Smooth surface-level replies sometimes reflect memorized bullets; sometimes they reflect a nervous day. Treat the difference as a clue, not a verdict.
 ```
 
 ### Interviewer Notes
@@ -83,3 +83,4 @@ Based on screening score: {X}/100
 - These questions are designed to be conversational, not adversarial
 - The goal is to let authentic candidates shine, not to trap anyone
 - If a candidate gives a strong, specific answer to a flagged area, that's a positive signal -- update your assessment
+- Combine interview behavior with document signals and verified claims; no single answer or "tell" is dispositive
