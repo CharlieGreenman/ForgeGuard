@@ -225,6 +225,20 @@ must(
   claudeMd.includes("CharlieGreenman@users.noreply.github.com"),
   "CLAUDE.md must document the upstream git author email (CharlieGreenman@users.noreply.github.com)"
 );
+const scoringStart = claudeMd.indexOf("### Scoring Model");
+must(scoringStart !== -1, "CLAUDE.md missing ### Scoring Model section");
+const rulesHeading = "\n### Rules";
+const rulesStart = claudeMd.indexOf(rulesHeading, scoringStart);
+must(
+  rulesStart !== -1,
+  "CLAUDE.md must keep ### Rules after ### Scoring Model so the scoring block stays machine-checkable"
+);
+const scoringSection = claudeMd.slice(scoringStart, rulesStart);
+must(
+  scoringSection.includes("score_ranges") &&
+    scoringSection.includes("config/thresholds.yml"),
+  "CLAUDE.md Scoring Model must tie PASS/REVIEW/FLAG to score_ranges in config/thresholds.yml (see modes/scan.md Step 4)"
+);
 
 const readmePath = join(root, "README.md");
 must(existsSync(readmePath), "missing README.md");

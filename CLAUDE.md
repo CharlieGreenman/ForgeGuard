@@ -47,6 +47,8 @@ The authenticity score is computed from 42 signals across 6 categories. Each sig
 - 20-39: Likely AI-generated
 - 0-19: Almost certainly AI
 
+**Recommendation tiers (PASS / REVIEW / FLAG):** These follow `score_ranges` in `config/thresholds.yml` only (see `modes/scan.md` Step 4). The bands above are qualitative labels for interpreting the numeric score; they do not define the three recommendation tiers.
+
 **Every deduction must cite the specific signal and evidence.** No black-box scoring.
 
 ### Rules
