@@ -102,10 +102,10 @@ Per-candidate reports must follow `templates/report-template.md`. Placeholders b
 
 ## Flags (detailed)
 
-### [CATEGORY] Signal Name
-**Evidence:** ...
-**Deduction:** -X points
-**Confidence:** High/Medium/Low
+### [LEXICAL | STRUCTURAL | TEMPORAL | METRIC | VOICE | CROSS-SOURCE] Signal label (align with `modes/_signals.md` / `config/thresholds.yml` `name:` when citing a weighted signal)
+**Evidence:** concrete quote, count, or structural note — no fabricated checks
+**Deduction:** -X points (use the enabled weight from `config/thresholds.yml` when the flag maps to a specific signal id)
+**Confidence:** High / Medium / Low
 
 ## Clean Signals (positive indicators)
 
@@ -115,7 +115,7 @@ Briefly list signals evaluated but not triggered, or human-authenticity cues, wh
 
 | Claim | Source | Status |
 |-------|--------|--------|
-| ... | ... | Confirmed/Not Found/Mismatch |
+| ... | ... | Confirmed / Not Found / Mismatch |
 
 ## Suggested Interview Questions
 
@@ -125,7 +125,7 @@ Briefly list signals evaluated but not triggered, or human-authenticity cues, wh
 
 ## Notes
 
-Calibration limits, missing cross-source data, language context, or other caveats.
+Calibration limits, missing cross-source data, language context, or other caveats. Treat the score as a heuristic, not proof of AI use or dishonesty; list only claims actually checked.
 ```
 
 ### Stack
