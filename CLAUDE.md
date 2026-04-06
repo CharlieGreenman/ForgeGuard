@@ -69,12 +69,15 @@ The authenticity score is computed from 42 signals across 6 categories. Each sig
 
 Reports are saved to `reports/{###}-{candidate-slug}-{YYYY-MM-DD}.md`.
 
-```markdown
-# Screening Report: {Candidate} -- {Role}
+Per-candidate reports must follow `templates/report-template.md`. Placeholders below mirror that file.
 
-**Date:** {YYYY-MM-DD}
-**Authenticity Score:** {X}/100
+```markdown
+# Screening Report: {CANDIDATE} -- {ROLE}
+
+**Date:** {DATE}
+**Authenticity Score:** {SCORE}/100
 **Recommendation:** {PASS / REVIEW / FLAG}
+**Signals triggered:** {TRIGGERED}/{TOTAL}
 
 ---
 
@@ -82,9 +85,12 @@ Reports are saved to `reports/{###}-{candidate-slug}-{YYYY-MM-DD}.md`.
 
 | Category | Signals Triggered | Deduction |
 |----------|-------------------|-----------|
-| Lexical | N/M | -X |
-| Structural | N/M | -X |
-| ... | ... | ... |
+| Lexical | {N}/7 | -{X} |
+| Structural | {N}/7 | -{X} |
+| Temporal | {N}/7 | -{X} |
+| Metric | {N}/7 | -{X} |
+| Voice | {N}/7 | -{X} |
+| Cross-source | {N}/7 | -{X} |
 
 ## Flags (detailed)
 
@@ -92,6 +98,10 @@ Reports are saved to `reports/{###}-{candidate-slug}-{YYYY-MM-DD}.md`.
 **Evidence:** ...
 **Deduction:** -X points
 **Confidence:** High/Medium/Low
+
+## Clean Signals (positive indicators)
+
+Briefly list signals evaluated but not triggered, or human-authenticity cues, when helpful for reviewers.
 
 ## Verified Claims
 
@@ -104,6 +114,10 @@ Reports are saved to `reports/{###}-{candidate-slug}-{YYYY-MM-DD}.md`.
 1. ...
 2. ...
 3. ...
+
+## Notes
+
+Calibration limits, missing cross-source data, language context, or other caveats.
 ```
 
 ### Stack

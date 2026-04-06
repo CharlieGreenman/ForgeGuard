@@ -31,7 +31,7 @@ Read completed reports from `reports/` and `data/screenings.md`.
 |------|-------|--------|
 | Proceed to interview | {N} | Score 70+, claims verified |
 | Needs investigation | {N} | Score 40-69, specific flags noted |
-| Do not proceed | {N} | Score <40, strong AI signals |
+| Deep human review | {N} | Score <40, strong AI signals -- no auto-reject; decide after review |
 
 ## Proceed to Interview
 
@@ -43,7 +43,7 @@ Read completed reports from `reports/` and `data/screenings.md`.
 | # | Candidate | Score | Key Flags | Suggested Action |
 |---|-----------|-------|-----------|------------------|
 
-## Do Not Proceed
+## Deep Human Review (scores below 40)
 
 | # | Candidate | Score | Primary Flags | Detail |
 |---|-----------|-------|---------------|--------|
@@ -54,7 +54,7 @@ Read completed reports from `reports/` and `data/screenings.md`.
 
 Applications were screened using ForgeGuard's 42-signal detection model across 6 categories: lexical analysis, structural patterns, temporal consistency, metric plausibility, voice analysis, and cross-source verification.
 
-Scores are probabilistic, not definitive. "Do not proceed" candidates showed strong AI-generation signals but should be reviewed by a human before final rejection.
+Scores are probabilistic, not definitive. The lowest tier lists strong AI-generation signals; hiring decisions always require human judgment -- never reject from a score alone.
 
 ## Appendix
 
